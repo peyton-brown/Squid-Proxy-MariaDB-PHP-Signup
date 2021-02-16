@@ -1,0 +1,1 @@
+# squidproxy-mysql-php-configuration
