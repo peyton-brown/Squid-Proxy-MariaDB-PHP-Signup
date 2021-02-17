@@ -9,6 +9,7 @@
 sudo apt-get install squid -y   
 sudo apt-get install apache2 -y   
 sudo apt-get install net-tools -y     
+sudo apt-get instaall mysql-server    
 
 ---
 
