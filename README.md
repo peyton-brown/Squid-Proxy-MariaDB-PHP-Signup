@@ -15,8 +15,8 @@ sudo apt-get install net-tools -y
 ### Steps for moving squid.conf to /etc/squid/ on Ubuntu Server  
 
 cd /etc/squid/  
-sudo git clone https://github.com/peyton-brown/qsi-squid-config-files.git  
-cd qsi-squid-config-files/  
+sudo git clone https://github.com/peyton-brown/squidproxy-mysql-php-configuration.git
+cd squidproxy-mysql-php-configuration/
 sudo mv /etc/squid/qsi-squid-config-files/* /etc/squid/   
 cd ../   
 
