@@ -14,3 +14,5 @@ One line version:
 INSERT INTO users VALUES('rootUser', 'rootPWD', 'Root User');
 
 SHOW TABLES;
+
+SELECT * FROM users;
