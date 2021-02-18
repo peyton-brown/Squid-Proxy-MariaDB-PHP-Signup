@@ -1,0 +1,11 @@
+CREATE DATABASE squid;
+
+USE squid;
+
+CREATE TABLE `users` (
+  `user` varchar(32) NOT NULL PRIMARY KEY default '',
+  `password` varchar(32) NOT NULL default '',
+  `fullname` varchar(64) default NULL,
+);
+
+INSERT INTO users VALUES('rootUser', 'rootPWD', 'Root User');
