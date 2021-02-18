@@ -52,5 +52,6 @@ sudo mysql_secure_installation
     
 The first prompt will ask whether you’d like to set up the Validate Password Plugin, which can be used to test the strength of your MySQL password. Regardless of your choice, the next prompt will be to set a password for the MySQL root user. Enter and then confirm a secure password of your choice. From there, you can press Y and then ENTER to accept the defaults for all the subsequent questions.    
     
+MySQL code is in the MySQLFiles folder.     
 ---
 
