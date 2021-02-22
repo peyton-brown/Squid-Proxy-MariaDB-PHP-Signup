@@ -1,31 +1,46 @@
 # Squid Config Files
 
-## Squid Cache &amp; Proxy (Feb. 2021)
+## Squid Proxy &amp; MySQL DB (Feb. 2021)
 
 ---
 
-### Requirements
+## Requirements
 
-sudo apt-get install squid   
-sudo apt-get install apache2   
-sudo apt-get install net-tools     
+sudo apt-get install net-tools   
+sudo apt-get install apache2    
+sudo apt-get install wget    
+sudo apt-get install build-essential    
+
+---
+
+## Squid Install Steps (for DB)
+
+cd /tmp/    
+wget http://www.squid-cache.org/Versions/v4/squid-4.14.tar.gz    
+sudo tar -zxvf squid-4.14.tar.gz    
+cd squid-4.14/     
+./configure --enable-basic-auth-helpers=DB    
+make     
+sudo make install        
+
+### Location of Squid Files:
+cd /usr/local/squid    
+
+---
+
+## MySQL-Server Install Steps
 sudo apt-get install mysql-server    
+sudo mysql_secure_installation   
+
+The first prompt will ask whether you’d like to set up the Validate Password Plugin, which can be used to test the strength of your MySQL password. Regardless of your choice, the next prompt will be to set a password for the MySQL root user. Enter and then confirm a secure password of your choice. From there, you can press Y and then ENTER to accept the defaults for all the subsequent questions.    
+
+###MySQL code is in the MySQLFiles folder.
 
 ---
 
-### Steps for moving squid.conf to /etc/squid/ on Ubuntu Server  
+## Connect to Proxy with FireFox
 
-cd /etc/squid/  
-sudo git clone https://github.com/peyton-brown/squidproxy-mysql-php-configuration.git
-cd squidproxy-mysql-php-configuration/
-sudo mv /etc/squid/qsi-squid-config-files/* /etc/squid/   
-cd ../   
-
----
-
-### Connect to Proxy with FireFox
-
-On Firefox, go to options  
+On Firefox, go to options   
 Network Settings   
 Manual proxy configuration   
 Go to your Ubuntu Server and type in 'ifconfig'   
@@ -38,20 +53,10 @@ Click OK
 
 ---
 
-### Add user to Proxy
+## Add user to Proxy (temporary until sql works)
 cd /etc/squid   
 sudo htpasswd pwd (username)   
 -Enter Password   
 -Default Username/PWD is root/root   
 
 ---
-
-### MySQL-Server Install Steps   
-sudo apt-get install mysql-server    
-sudo mysql_secure_installation   
-    
-The first prompt will ask whether you’d like to set up the Validate Password Plugin, which can be used to test the strength of your MySQL password. Regardless of your choice, the next prompt will be to set a password for the MySQL root user. Enter and then confirm a secure password of your choice. From there, you can press Y and then ENTER to accept the defaults for all the subsequent questions.    
-    
-MySQL code is in the MySQLFiles folder.     
----
-
