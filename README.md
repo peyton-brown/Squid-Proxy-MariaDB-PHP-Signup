@@ -9,8 +9,7 @@
 sudo apt-get install net-tools   
 sudo apt-get install wget    
 sudo apt-get install build-essential    
-sudo apt-get install mysql-server     
-sudo apt-get install apache2     
+sudo apt-get install mysql-server      
 
 ---
 
@@ -27,11 +26,13 @@ sudo make install
 ### Location of Squid Files:
 cd /usr/local/squid    
 
-### Mkdir:
-cd /usr/local/squid/
-sudo mkdir cache
-cd cache
-sudo mkdir core
+### Make these directories for cache:
+cd /usr/local/squid/    
+sudo mkdir cache    
+cd cache      
+
+sudo mkdir squid       
+sudo mkdir core          
 
 ---
 
