@@ -75,7 +75,7 @@ cd git
 git clone https://github.com/peyton-brown/squidproxy-mysql-php-configuration.git              
 cd squidproxy-mysql-php-configuration.git             
 
-### Move squid.conf
+### Move squid.conf & Whitelist
 
 sudo mv squid.conf /usr/local/squid/etc/            
 sudo mv Whitelist/allowed_sites.acl /usr/local/squid/etc/         
