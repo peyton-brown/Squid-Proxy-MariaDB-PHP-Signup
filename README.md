@@ -82,7 +82,7 @@ sudo mv Whitelist/allowed_sites.acl /usr/local/squid/etc/
 
 ### Move basic_db_auth
 
-sudo mv basic_db_auth /usr/local/squid/libexec/          
+sudo mv MySQLFiles/basic_db_auth /usr/local/squid/libexec/          
 
 ---
 
