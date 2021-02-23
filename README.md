@@ -27,6 +27,12 @@ sudo make install
 ### Location of Squid Files:
 cd /usr/local/squid    
 
+### Mkdir:
+cd /usr/local/squid/
+sudo mkdir cache
+cd cache
+sudo mkdir core
+
 ---
 
 ## MySQL-Server Install Steps
