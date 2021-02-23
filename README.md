@@ -38,11 +38,11 @@ The first prompt will ask whether you’d like to set up the Validate Password P
 
 sudo mysql   
 
-###MySQL code is in the MySQLFiles folder.
+### MySQL code is in the MySQLFiles folder.
 
 ---
 
-## Squid Configuration with MySQL Authentication [SOURCE](http://linchpincorner.blogspot.com/2016/08/squid-proxy-server-configuration-with_23.html)
+## Squid Configuration with MySQL Authentication
 
 cd /usr/local/squid/libexec/    
 sudo vim basic_db_auth    
@@ -62,6 +62,8 @@ Change '$db_usercol' to the username column in mysql table
 
 Change '$db_passwdcol' to the password column in mysql table    
   Example: (my $db_passwd = "password";)    
+
+[SOURCE](http://linchpincorner.blogspot.com/2016/08/squid-proxy-server-configuration-with_23.html)
 
 ---
 
