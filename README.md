@@ -69,20 +69,20 @@ Change '$db_passwdcol' to the password column in mysql table
 
 ## Move files from Git Clone to folders on server
 
-cd
-sudo mkdir git
-cd git
-git clone https://github.com/peyton-brown/squidproxy-mysql-php-configuration.git
-cd squidproxy-mysql-php-configuration.git
+cd    
+sudo mkdir git      
+cd git       
+git clone https://github.com/peyton-brown/squidproxy-mysql-php-configuration.git              
+cd squidproxy-mysql-php-configuration.git             
 
 ### Move squid.conf
 
-sudo mv squid.conf /usr/local/squid/etc/
-sudo mv Whitelist/allowed_sites.acl /usr/local/squid/etc/
+sudo mv squid.conf /usr/local/squid/etc/            
+sudo mv Whitelist/allowed_sites.acl /usr/local/squid/etc/         
 
 ### Move basic_db_auth
 
-sudo mv basic_db_auth /usr/local/squid/libexec/
+sudo mv basic_db_auth /usr/local/squid/libexec/          
 
 ---
 
