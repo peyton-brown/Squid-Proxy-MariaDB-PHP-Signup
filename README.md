@@ -26,14 +26,12 @@ sudo make install
 ### Location of Squid Files:
 cd /usr/local/squid    
 
-### Make these directories for cache:
-cd /usr/local/squid/    
-sudo mkdir cache    
-cd cache      
+### Starting Squid
+After compiling squid, run this command to verify your configuration file. If this outputs any errors then these are syntax errors or other fatal misconfigurations and needs to be corrected before you continue. If it is silent and immediately gives back the command prompt then your squid.conf is syntactically correct and could be understood by Squid.       
+/usr/local/squid/sbin/squid -k parse     
 
-sudo mkdir squid       
-sudo mkdir core          
 
+[SOURCE](https://wiki.squid-cache.org/SquidFaq/InstallingSquid)
 ---
 
 ## MySQL-Server Install Steps
@@ -107,3 +105,7 @@ Make sure the port is the same as the one in squid.conf
 Click OK   
 
 ---
+
+## Potential Error Messages
+
+1.
