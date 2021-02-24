@@ -28,7 +28,7 @@ cd /usr/local/squid
 
 ### Starting Squid
 After compiling squid, run this command to verify your configuration file. If this outputs any errors then these are syntax errors or other fatal misconfigurations and needs to be corrected before you continue. If it is silent and immediately gives back the command prompt then your squid.conf is syntactically correct and could be understood by Squid.       
-/usr/local/squid/sbin/squid -k parse     
+- /usr/local/squid/sbin/squid -k parse     
 
 
 [SOURCE](https://wiki.squid-cache.org/SquidFaq/InstallingSquid)
