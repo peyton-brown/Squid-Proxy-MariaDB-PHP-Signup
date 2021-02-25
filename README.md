@@ -6,17 +6,16 @@
 
 ## Requirements
 
-sudo apt-get install mysql-server net-tools perl gcc autoconf automake libcap-dev libltdl-dev wget build-essential -y      
+sudo apt-get install mysql-server build-essential net-tools perl gcc autoconf automake libcap-dev libltdl-dev wget -y      
 
 ---
 
 ## Squid Install Steps (for DB)
 
 cd     
-sudo mkdir squid-install-files
 sudo wget http://www.squid-cache.org/Versions/v4/squid-4.11-20200515-r930cb1107.tar.gz    
-sudo tar -zxvf squid-4.14.tar.gz    
-cd squid-4.14/     
+sudo tar xvzf squid-4.11-20200515-r930cb1107.tar.gz  
+cd squid-4.11-20200515-r930cb1107.tar.gz     
 ./configure --enable-basic-auth-helpers=DB --prefix=/usr --includedir=/usr/include --datadir=/usr/share --bindir=/usr/sbin   --libexecdir=/usr/lib/squid --localstatedir=/var --sysconfdir=/etc/squid    
 make     
 sudo make install        
