@@ -135,7 +135,7 @@ Click OK
       WantedBy=multi-user.target   
 
 
-      **INSERT INTO TERMINAL**
-      mkdir /var/log/squid
-      chown proxy: /var/log/squid
-      chmod 4664 /var/log/squid      
+      **INSERT INTO TERMINAL**    
+      mkdir /var/log/squid    
+      chown proxy: /var/log/squid    
+      chmod 4664 /var/log/squid        
