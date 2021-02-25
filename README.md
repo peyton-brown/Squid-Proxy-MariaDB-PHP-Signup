@@ -14,7 +14,7 @@ sudo apt-get install mysql-server build-essential net-tools perl gcc autoconf au
 
 cd     
 sudo wget http://www.squid-cache.org/Versions/v4/squid-4.14.tar.gz    
-sudo tar xvzf squid-4.14.tar.gz
+sudo tar xvzf squid-4.14.tar.gz    
 cd squid-4.14/    
 ./configure --enable-basic-auth-helpers=DB    
 make     
