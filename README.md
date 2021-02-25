@@ -117,7 +117,7 @@ Click OK
 
 1. Failed to start squid.service: Unit not found
   - cd /etc/systemd/system, if squid.service is not there, make the file. (sudo touch squid.service)
-  - Paste the following code into that file:
+  - Paste the following code into that file:    
       [Unit]    
       Description=Squid caching proxy    
       Documentation=man:squid(8)    
