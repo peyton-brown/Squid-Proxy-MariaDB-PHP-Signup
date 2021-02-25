@@ -21,7 +21,7 @@
 ### Location of Squid Files:
 - cd /usr/local/squid    
 
-## Git Clone Folder
+### Git Clone Folder
 - cd    
 - sudo mkdir git      
 - cd git       
