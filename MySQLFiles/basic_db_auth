@@ -133,11 +133,11 @@ use DBI;
 use Digest::MD5 qw(md5 md5_hex md5_base64);
 use Digest::SHA qw(sha1 sha1_hex sha1_base64);
 
-my $dsn = "DBI:mysql:database=squid";
+my $dsn = "DBI:mysql:database=squid;host=192.168.1.1";
 my $db_user = undef;
 my $db_passwd = undef;
-my $db_table = "passwd";
-my $db_usercol = "user";
+my $db_table = "users";
+my $db_usercol = "username";
 my $db_passwdcol = "password";
 my $db_cond = "enabled = 1";
 my $plaintext = 0;
