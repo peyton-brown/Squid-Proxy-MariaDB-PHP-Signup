@@ -1,6 +1,6 @@
 # Squid Config Files
 
-## Squid Proxy &amp; MySQL DB (Feb. 2021)
+## Squid Proxy & MySQL DB (Feb. 2021)
 
 ---
 
@@ -18,7 +18,10 @@
 - make     
 - sudo make install        
 
-### Location of Squid Files:
+### Give permission to caching folder:    
+- sudo chmod a+rwx /usr/local/squid/var/logs/    
+
+### Location of Squid Files:  
 - cd /usr/local/squid    
 
 ### Git Clone Folder
