@@ -18,8 +18,10 @@
 - make     
 - sudo make install        
 
-### Give permission to caching folder:    
-- sudo chmod a+rwx /usr/local/squid/var/logs/    
+### Give permission to caching/log folder:    
+- cd /
+- sudo mkdir /squid_logs/
+- sudo chmod ugo+rwx /squid_logs/
 
 ### Location of Squid Files:  
 - cd /usr/local/squid    
