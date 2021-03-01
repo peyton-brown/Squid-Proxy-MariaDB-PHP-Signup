@@ -10,12 +10,12 @@
 ---
 
 ## Squid Install Steps (for DB)
-- cd     
+- cd /tmp/    
 - sudo wget http://www.squid-cache.org/Versions/v4/squid-4.14.tar.gz    
 - sudo tar xvzf squid-4.14.tar.gz    
 - cd squid-4.14/    
-- ./configure --enable-basic-auth-helpers=DB    
-- make     
+- ./configure --enable-basic-auth-helpers=DB --with-default-user=X   
+- make all    
 - sudo make install        
 
 ### Give permission to caching/log folder:    
