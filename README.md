@@ -21,7 +21,7 @@
 ### Give permission to caching/log folder:    
 - cd /
 - sudo mkdir /squid_logs/
-- sudo chmod ugo+rwx /squid_logs/
+- sudo chmod ugo+rwx /usr/local/squid/var/logs/
 
 ### Location of Squid Files:  
 - cd /usr/local/squid    
