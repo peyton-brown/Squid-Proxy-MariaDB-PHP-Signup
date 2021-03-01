@@ -27,20 +27,20 @@
 - cd /usr/local/squid    
 
 ### Git Clone Folder
-- cd    
-- sudo mkdir git      
-- cd git       
+- cd /   
+- sudo mkdir /git/      
+- cd /git/       
 - git clone https://github.com/peyton-brown/squidproxy-mysql-php-configuration.git              
-- cd squidproxy-mysql-php-configuration.git             
+- cd /squidproxy-mysql-php-configuration.git             
 
-### Move squid.conf
-- sudo mv squid.conf /usr/local/squid/etc/            
+### Copy squid.conf
+- sudo cp squid.conf /usr/local/squid/etc/            
 
-### Move Whitelist
-- sudo mv Whitelist/allowed_sites.acl /usr/local/squid/etc/         
+### Copy Whitelist
+- sudo cp Whitelist/allowed_sites.acl /usr/local/squid/etc/         
 
-### Move basic_db_auth
-- sudo mv MySQLFiles/basic_db_auth /usr/local/squid/libexec/          
+### Copy basic_db_auth
+- sudo cp MySQLFiles/basic_db_auth /usr/local/squid/libexec/          
 
 ### Starting Squid
 After compiling squid, run this command to verify your configuration file. If this outputs any errors then these are syntax errors or other fatal misconfigurations and needs to be corrected before you continue. If it is silent and immediately gives back the command prompt then your squid.conf is syntactically correct and could be understood by Squid.       
