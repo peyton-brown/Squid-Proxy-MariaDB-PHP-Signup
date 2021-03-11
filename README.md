@@ -22,11 +22,11 @@
 ### Give permission to caching/log folder:    
 - cd /               
 - mkdir cachedir             
-- chmod ugo+rwx -R /usr/local/squid/var/logs/      
+- chmod ugo+rwx -R /usr/local/squid/      
 - chmod ugo+rwx -R /cachedir/       
-- chown -R proxy:proxy /usr/local/squid/var/logs/
+- chown -R proxy:proxy /usr/local/squid/
 - chown -R proxy:proxy /cachedir/          
-- chmod -R 777 /usr/local/squid/var/logs/
+- chmod -R 777 /usr/local/squid/
 - chmod -R 777 /cachedir/       
 
 ### Location of Squid Files:  
