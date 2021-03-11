@@ -5,14 +5,15 @@
 ---
 
 ## Requirements
+- sudo apt-get update
 - sudo apt-get install mysql-server build-essential net-tools perl gcc autoconf automake libcap-dev libltdl-dev wget -y      
 
 ---
 
 ## Squid Install Steps (for DB)
 - cd /tmp/    
-- sudo wget http://www.squid-cache.org/Versions/v4/squid-4.14.tar.gz    
-- sudo tar xvzf squid-4.14.tar.gz    
+- wget http://www.squid-cache.org/Versions/v4/squid-4.14.tar.gz    
+- tar xvzf squid-4.14.tar.gz    
 - cd squid-4.14/    
 - ./configure --enable-basic-auth-helpers=DB --with-default-user=proxy     
 - make all    
@@ -20,10 +21,10 @@
 
 ### Give permission to caching/log folder:    
 - cd /               
-- sudo mkdir cachedir             
-- sudo chmod ugo+rwx /usr/local/squid/var/logs/             
-- sudo chown -R proxy:proxy /cachedir/cache/squid/          
-- sudo chmod -R 777 /cachedir/cache/squid/       
+- mkdir cachedir             
+- chmod ugo+rwx /usr/local/squid/var/logs/             
+- chown -R proxy:proxy /cachedir/cache/squid/          
+- chmod -R 777 /cachedir/cache/squid/       
 
 ### Location of Squid Files:  
 - cd /usr/local/squid    
