@@ -6,7 +6,7 @@
 
 ## Requirements
 - apt-get update
-- apt-get install mysql-server build-essential net-tools perl gcc autoconf automake libcap-dev libltdl-dev wget -y      
+- apt-get install git mysql-server build-essential net-tools perl gcc autoconf automake libcap-dev libltdl-dev wget -y      
 
 ---
 
@@ -22,9 +22,12 @@
 ### Give permission to caching/log folder:    
 - cd /               
 - mkdir cachedir             
-- chmod ugo+rwx /usr/local/squid/var/logs/             
-- chown -R proxy:proxy /cachedir/cache/squid/          
-- chmod -R 777 /cachedir/cache/squid/       
+- chmod ugo+rwx -R /usr/local/squid/var/logs/      
+- chmod ugo+rwx -R /cachedir/       
+- chown -R proxy:proxy /usr/local/squid/var/logs/
+- chown -R proxy:proxy /cachedir/          
+- chmod -R 777 /usr/local/squid/var/logs/
+- chmod -R 777 /cachedir/       
 
 ### Location of Squid Files:  
 - cd /usr/local/squid    
