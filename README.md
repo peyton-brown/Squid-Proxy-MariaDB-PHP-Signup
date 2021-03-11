@@ -6,15 +6,15 @@
 
 ## Requirements
 - apt-get update
-- apt-get install git mysql-server build-essential net-tools perl gcc autoconf automake libcap-dev libltdl-dev wget -y      
+- apt-get install git vim mysql-server build-essential net-tools perl gcc autoconf automake libcap-dev libltdl-dev wget -y      
 
 ---
 
 ## Squid Install Steps (for DB)
 - cd /tmp/    
-- wget http://www.squid-cache.org/Versions/v4/squid-4.14.tar.gz    
-- tar xvzf squid-4.14.tar.gz    
-- cd squid-4.14/    
+- wget http://www.squid-cache.org/Versions/v4/squid-4.13.tar.gz      
+- tar xvzf squid-4.13.tar.gz    
+- cd squid-4.13/    
 - ./configure --enable-basic-auth-helpers=DB --with-default-user=proxy     
 - make all    
 - make install        
@@ -24,7 +24,7 @@
 - mkdir cachedir             
 - chmod ugo+rwx -R /usr/local/squid/      
 - chmod ugo+rwx -R /cachedir/       
-- chown -R proxy:proxy /usr/local/squid/
+- chown -R proxy:proxy /usr/local/squid/     
 - chown -R proxy:proxy /cachedir/          
 - chmod -R 777 /usr/local/squid/
 - chmod -R 777 /cachedir/       
