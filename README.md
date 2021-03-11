@@ -5,8 +5,8 @@
 ---
 
 ## Requirements
-- sudo apt-get update
-- sudo apt-get install mysql-server build-essential net-tools perl gcc autoconf automake libcap-dev libltdl-dev wget -y      
+- apt-get update
+- apt-get install mysql-server build-essential net-tools perl gcc autoconf automake libcap-dev libltdl-dev wget -y      
 
 ---
 
@@ -17,7 +17,7 @@
 - cd squid-4.14/    
 - ./configure --enable-basic-auth-helpers=DB --with-default-user=proxy     
 - make all    
-- sudo make install        
+- make install        
 
 ### Give permission to caching/log folder:    
 - cd /               
@@ -31,19 +31,19 @@
 
 ### Git Clone Folder
 - cd /   
-- sudo mkdir /git/      
+- mkdir /git/      
 - cd /git/       
 - git clone https://github.com/peyton-brown/squidproxy-mysql-php-configuration.git              
 - cd /squidproxy-mysql-php-configuration.git             
 
 ### Copy squid.conf
-- sudo cp squid.conf /usr/local/squid/etc/            
+- cp squid.conf /usr/local/squid/etc/            
 
 ### Copy Whitelist
-- sudo cp Whitelist/allowed_sites.acl /usr/local/squid/etc/         
+- cp Whitelist/allowed_sites.acl /usr/local/squid/etc/         
 
 ### Copy basic_db_auth
-- sudo cp MySQLFiles/basic_db_auth /usr/local/squid/libexec/          
+- cp MySQLFiles/basic_db_auth /usr/local/squid/libexec/          
 
 ### Starting Squid
 After compiling squid, run this command to verify your configuration file. If this outputs any errors then these are syntax errors or other fatal misconfigurations and needs to be corrected before you continue. If it is silent and immediately gives back the command prompt then your squid.conf is syntactically correct and could be understood by Squid.       
@@ -64,8 +64,8 @@ If you want to run squid in the background or on startup, leave off all options:
 ---
 
 ## MySQL-Server Install Steps
-- sudo apt-get install mysql-server    
-- sudo mysql_secure_installation   
+- apt-get install mysql-server    
+- mysql_secure_installation   
 
 The first prompt will ask whether you’d like to set up the Validate Password Plugin, which can be used to test the strength of your MySQL password. Regardless of your choice, the next prompt will be to set a password for the MySQL root user. Enter and then confirm a secure password of your choice. From there, you can press Y and then ENTER to accept the defaults for all the subsequent questions. [SOURCE](https://www.digitalocean.com/community/tutorials/how-to-install-mysql-on-ubuntu-20-04)    
 
