@@ -6,7 +6,7 @@
 
 ## Requirements
 - apt-get update
-- apt-get install git vim mysql-server build-essential net-tools perl gcc autoconf automake libcap-dev libltdl-dev wget -y      
+- apt-get install build-essential autoconf automake libcap-dev libltdl-dev grep wget net-tools gcc git vim perl mysql-server -y      
 
 ---
 
@@ -19,11 +19,12 @@
 - make all    
 - make install        
 
-### Give permission to caching/log folder:    
-- cd /               
-- mkdir cachedir             
-- chmod ugo+rwx -R /usr/local/squid/      
-- chmod ugo+rwx -R /cachedir/       
+### Give permission to caching/log folder:                 
+- mkdir /cachedir/
+- cd /cachedir/
+- mkdir coredumps/             
+- chmod -R ugo+rwx /usr/local/squid/      
+- chmod -R ugo+rwx /cachedir/       
 - chown -R proxy:proxy /usr/local/squid/     
 - chown -R proxy:proxy /cachedir/          
 - chmod -R 777 /usr/local/squid/
