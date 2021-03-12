@@ -24,9 +24,7 @@
 - cd /cachedir/         
 - mkdir coredumps/             
 - chmod -R ugo+rwx /usr/local/squid/      
-- chmod -R ugo+rwx /cachedir/       
-- chown -R proxy:proxy /usr/local/squid/     
-- chown -R proxy:proxy /cachedir/      
+- chmod -R ugo+rwx /cachedir/       s
 
 ### Location of Squid Files:  
 - cd /usr/local/squid    
