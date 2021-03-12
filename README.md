@@ -6,7 +6,7 @@
 
 ## Requirements
 - apt-get update
-- apt-get install build-essential autoconf automake libcap-dev libltdl-dev grep wget net-tools gcc git vim perl mysql-server -y      
+- apt-get install build-essential binutils autoconf automake libcap-dev libltdl-dev grep wget net-tools g++ git vim perl mysql-server -y      
 
 ---
 
