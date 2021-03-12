@@ -6,16 +6,16 @@
 
 ## Requirements
 - apt-get update
-- apt-get install build-essential binutils autoconf automake libcap-dev libltdl-dev grep wget net-tools g++ git vim perl mysql-server -y      
+- apt-get install build-essential binutils build-dep autoconf automake libcap-dev libltdl-dev grep wget net-tools g++ git vim perl mysql-server aptitude squid4 -y      
 
 ---
 
 ## Squid Install Steps (for DB)
 - cd /tmp/    
 - wget http://www.squid-cache.org/Versions/v4/squid-4.13.tar.gz      
-- tar xvzf squid-4.13.tar.gz    
-- cd squid-4.13/    
-- ./configure --enable-basic-auth-helpers=DB      
+- tar xvf squid-4.14.tar.gz    
+- cd squid-4.14/     
+- ./configure --prefix=/usr --localstatedir=/var --libexecdir=${prefix}/lib/squid --datadir=${prefix}/share/squid --sysconfdir=/etc/squid --with-default-user=proxy --with-logdir=/var/log --with-pidfile=/var/run/squid.pid --with-openssl --enable-icmp      
 - make all     
 - make install         
 
