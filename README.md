@@ -15,20 +15,18 @@
 - wget http://www.squid-cache.org/Versions/v4/squid-4.13.tar.gz      
 - tar xvzf squid-4.13.tar.gz    
 - cd squid-4.13/    
-- ./configure --enable-basic-auth-helpers=DB --with-default-user=proxy     
-- make all    
-- make install        
+- ./configure --enable-basic-auth-helpers=DB      
+- make all     
+- make install         
 
 ### Give permission to caching/log folder:                 
-- mkdir /cachedir/
-- cd /cachedir/
+- mkdir /cachedir/             
+- cd /cachedir/         
 - mkdir coredumps/             
 - chmod -R ugo+rwx /usr/local/squid/      
 - chmod -R ugo+rwx /cachedir/       
 - chown -R proxy:proxy /usr/local/squid/     
-- chown -R proxy:proxy /cachedir/          
-- chmod -R 777 /usr/local/squid/
-- chmod -R 777 /cachedir/       
+- chown -R proxy:proxy /cachedir/      
 
 ### Location of Squid Files:  
 - cd /usr/local/squid    
@@ -56,14 +54,10 @@ After compiling squid, run this command to verify your configuration file. If th
 Create swap directories using -z.     
 - /usr/local/squid/sbin/squid -z     
 
-Once the creation of the cache directories completes, you can start Squid and try it out. Probably the best thing to do is run it from your terminal and watch the debugging output. Use this command:     
-- /usr/local/squid/sbin/squid -NCd1     
-If everything is working, you will see the line: 'Ready to serve requests.'     
+If you want to run squid in the background or on startup, leave off all options:          
+- /usr/local/squid/sbin/squid           
 
-If you want to run squid in the background or on startup, leave off all options:
-- /usr/local/squid/sbin/squid
-
-[SOURCE](https://wiki.squid-cache.org/SquidFaq/InstallingSquid)
+[SOURCE](https://wiki.squid-cache.org/SquidFaq/InstallingSquid)             
 
 ---
 
