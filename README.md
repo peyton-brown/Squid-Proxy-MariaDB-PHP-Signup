@@ -6,7 +6,7 @@
 
 ## Requirements
 - apt-get update
-- apt-get install build-essential binutils build-dep autoconf automake libcap-dev libltdl-dev grep wget net-tools g++ git vim perl mysql-server aptitude squid4 -y      
+- apt-get install build-essential binutils build-dep autoconf automake libcap-dev libltdl-dev grep wget net-tools g++ git vim perl mysql-server aptitude squid -y      
 
 ---
 
