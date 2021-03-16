@@ -19,15 +19,11 @@
 - make all     
 - make install         
 
-### Give permission to caching/log folder:                 
-- mkdir /cachedir/             
-- cd /cachedir/         
-- mkdir coredumps/             
-- chmod -R ugo+rwx /usr/local/squid/      
-- chmod -R ugo+rwx /cachedir/       
+### Give permission to caching/log folder:        
+- chmod -R ugo+rwx /opt/squid/           
 
 ### Location of Squid Files:  
-- cd /usr/local/squid    
+- cd /opt/squid    
 
 ### Git Clone Folder
 - cd /   
@@ -37,23 +33,23 @@
 - cd /squidproxy-mysql-php-configuration.git             
 
 ### Copy squid.conf
-- cp squid.conf /usr/local/squid/etc/            
+- cp squid.conf /opt/squid/etc/            
 
 ### Copy Whitelist
-- cp Whitelist/allowed_sites.acl /usr/local/squid/etc/         
+- cp Whitelist/allowed_sites.acl /opt/squid/etc/         
 
 ### Copy basic_db_auth
-- cp MySQLFiles/basic_db_auth /usr/local/squid/libexec/          
+- cp MySQLFiles/basic_db_auth /opt/squid/libexec/          
 
 ### Starting Squid
 After compiling squid, run this command to verify your configuration file. If this outputs any errors then these are syntax errors or other fatal misconfigurations and needs to be corrected before you continue. If it is silent and immediately gives back the command prompt then your squid.conf is syntactically correct and could be understood by Squid.       
-- /usr/local/squid/sbin/squid -k parse        
+- /opt/squid/sbin/squid -k parse        
 
 Create swap directories using -z.     
-- /usr/local/squid/sbin/squid -z     
+- /opt/squid/sbin/squid -z     
 
 If you want to run squid in the background or on startup, leave off all options:          
-- /usr/local/squid/sbin/squid           
+- /opt/squid/sbin/squid           
 
 [SOURCE](https://wiki.squid-cache.org/SquidFaq/InstallingSquid)             
 
@@ -73,7 +69,7 @@ The first prompt will ask whether you’d like to set up the Validate Password P
 
 ## Squid Configuration with MySQL Authentication
 
-- cd /usr/local/squid/libexec/    
+- cd /opt/squid/libexec/    
 - sudo vim basic_db_auth    
 
 Search for 'my $dsn ='   
