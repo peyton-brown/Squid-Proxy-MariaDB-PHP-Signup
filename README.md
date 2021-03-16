@@ -14,8 +14,8 @@
 - cd /tmp/    
 - wget http://www.squid-cache.org/Versions/v4/squid-4.13.tar.gz      
 - tar -xvzf squid-4.13.tar.gz    
-- cd squid-4.13/     
-- ./configure --sysconfdir=/etc/squid/ --enable-basic-auth-helpers=DB      
+- cd squid-4.13/       
+- ./configure --prefix=/opt/squid/ --with-logdir=/var/log/squid/ --with-pidfile=/var/run/squid.pid --enable-storeio=ufs,aufs --enable-removal-policies=lru,heap --enable-icmp --enable-useragent-log --enable-referer-log --enable-cache-digests --with-large-files --enable-basic-auth-helpers=DB        
 - make all     
 - make install         
 
