@@ -13,8 +13,8 @@
 ## Squid Install Steps (for DB)
 - cd /tmp/    
 - wget http://www.squid-cache.org/Versions/v4/squid-4.13.tar.gz      
-- tar xvf squid-4.14.tar.gz    
-- cd squid-4.14/     
+- tar -xvzf squid-4.13.tar.gz    
+- cd squid-4.13/     
 - ./configure --sysconfdir=/etc/squid/ --enable-basic-auth-helpers=DB      
 - make all     
 - make install         
@@ -24,7 +24,7 @@
 - cd /cachedir/         
 - mkdir coredumps/             
 - chmod -R ugo+rwx /usr/local/squid/      
-- chmod -R ugo+rwx /cachedir/       s
+- chmod -R ugo+rwx /cachedir/       
 
 ### Location of Squid Files:  
 - cd /usr/local/squid    
