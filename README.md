@@ -15,7 +15,7 @@
 - wget http://www.squid-cache.org/Versions/v4/squid-4.13.tar.gz      
 - tar -xvzf squid-4.13.tar.gz    
 - cd squid-4.13/       
-- ./configure --prefix=/opt/squid/ --with-logdir=/var/log/squid/ --with-pidfile=/var/run/squid.pid --enable-storeio=ufs,aufs --enable-removal-policies=lru,heap --enable-icmp --enable-useragent-log --enable-referer-log --enable-cache-digests --with-large-files --enable-basic-auth-helpers=DB        
+- ./configure --prefix=/opt/squid/ --with-logdir=/opt/squid/var/cache/squid/ --with-pidfile=/opt/squid/var/run/squid.pid --enable-storeio=ufs,aufs --enable-removal-policies=lru,heap --enable-icmp --enable-useragent-log --enable-referer-log --enable-cache-digests --with-large-files
 - make all     
 - make install         
 
@@ -26,8 +26,7 @@
 - cd /opt/squid    
 
 ### Git Clone Folder
-- cd /   
-- mkdir /git/      
+- mkdir /git      
 - cd /git/       
 - git clone https://github.com/peyton-brown/squidproxy-mysql-php-configuration.git              
 - cd /squidproxy-mysql-php-configuration.git             
