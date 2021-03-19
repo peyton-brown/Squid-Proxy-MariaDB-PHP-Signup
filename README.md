@@ -4,18 +4,18 @@
 
 ---
 
-## Requirements
+## Requirements:
 - apt-get update         
 - apt-get install dpkg-dev libldap2-dev libpam0g-dev libdb-dev cdbs libsasl2-dev debhelper libcppunit-dev libkrb5-dev comerr-dev libcap2-dev libecap3-dev libexpat1-dev libxml2-dev autotools-dev libltdl-dev pkg-config libnetfilter-conntrack-dev nettle-dev libgnutls28-dev build-essential binutils autoconf automake grep wget net-tools g++ git vim gawk perl mysql-server -y      
 
 ---
 
-## Squid Install Steps (for DB)
+## Squid Install Steps (for DB):
 - cd /tmp/    
-- wget http://www.squid-cache.org/Versions/v4/squid-4.14.tar.gz      
+- wget http://www.squid-cache.org/Versions/v4/squid-4.14.tar.gz       
 - tar -xvzf squid-4.14.tar.gz    
 - cd squid-4.14/       
-- ./configure --prefix=/opt/squid/ --with-logdir=/opt/squid/var/cache/squid/ --with-pidfile=/opt/squid/var/run/squid.pid --enable-storeio=ufs,aufs --enable-removal-policies=lru,heap --enable-icmp --enable-useragent-log --enable-referer-log --enable-cache-digests --with-large-files
+- ./configure --prefix=/opt/squid/ --with-logdir=/opt/squid/var/cache/squid/ --with-pidfile=/opt/squid/var/run/squid.pid --enable-storeio=ufs,aufs --enable-removal-policies=lru,heap --enable-icmp --enable-useragent-log --enable-referer-log --enable-cache-digests --with-large-files --disable-ipv6        
 - make all     
 - make install         
 
@@ -25,36 +25,39 @@
 ### Location of Squid Files:  
 - cd /opt/squid    
 
-### Git Clone Folder
+### Add squid to $PATH:
+- export PATH=$PATH:/opt/squid/sbin/
+
+### Git Clone Folder:
 - mkdir /git      
 - cd /git/       
 - git clone https://github.com/peyton-brown/squidproxy-mysql-php-configuration.git              
 - cd /squidproxy-mysql-php-configuration.git             
 
-### Copy squid.conf
+### Copy squid.conf:
 - cp squid.conf /opt/squid/etc/            
 
-### Copy Whitelist
+### Copy Whitelist:
 - cp Whitelist/allowed_sites.acl /opt/squid/etc/         
 
-### Copy basic_db_auth
+### Copy basic_db_auth:
 - cp MySQLFiles/basic_db_auth /opt/squid/libexec/          
 
-### Starting Squid
+### Starting Squid:
 After compiling squid, run this command to verify your configuration file. If this outputs any errors then these are syntax errors or other fatal misconfigurations and needs to be corrected before you continue. If it is silent and immediately gives back the command prompt then your squid.conf is syntactically correct and could be understood by Squid.       
-- /opt/squid/sbin/squid -k parse        
+- squid -k parse        
 
 Create swap directories using -z.     
-- /opt/squid/sbin/squid -z     
+- squid -z     
 
 If you want to run squid in the background or on startup, leave off all options:          
-- /opt/squid/sbin/squid           
+- squid           
 
 [SOURCE](https://wiki.squid-cache.org/SquidFaq/InstallingSquid)             
 
 ---
 
-## MySQL-Server Install Steps
+## MySQL-Server Install Steps:
 - apt-get install mysql-server    
 - mysql_secure_installation   
 
@@ -66,7 +69,7 @@ The first prompt will ask whether you’d like to set up the Validate Password P
 
 ---
 
-## Squid Configuration with MySQL Authentication
+## Squid Configuration with MySQL Authentication:
 
 - cd /opt/squid/libexec/    
 - sudo vim basic_db_auth    
@@ -91,7 +94,7 @@ Change '$db_passwdcol' to the password column in mysql table
 
 ---
 
-## Connect to Proxy with FireFox
+## Connect to Proxy with FireFox:
 
 - On Firefox, go to options   
 - Network Settings   
@@ -106,29 +109,8 @@ Change '$db_passwdcol' to the password column in mysql table
 
 ---
 
-## Potential Error Messages
+## Potential Error Messages:
 
-1. **Failed to start squid.service: Unit not found**
-  - cd /etc/systemd/system, if squid.service is not there, make the file. (sudo touch squid.service)
-  - Paste the following code into that file:    
-      [Unit]    
-      Description=Squid caching proxy    
-      Documentation=man:squid(8)    
-      After=network.target network-online.target nss-lookup.target    
+1.
 
-      [Service]       
-      Type=simple            
-      PIDFile=/run/squid.pid        
-      ExecStart=/usr/sbin/squid --foreground $SQUID_OPTS -f /etc/squid/squid.conf      
-      ExecReload=/usr/bin/kill -HUP $MAINPID      
-      KillMode=mixed       
-      NotifyAccess=all       
-
-      [Install]          
-      WantedBy=multi-user.target   
-
-
-      **INSERT INTO TERMINAL**    
-      mkdir /var/log/squid    
-      chown proxy: /var/log/squid    
-      chmod 4664 /var/log/squid        
+---
