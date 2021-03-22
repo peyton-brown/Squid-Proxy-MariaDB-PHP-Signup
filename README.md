@@ -1,6 +1,6 @@
 # Squid Config Files
 
-## Squid Proxy & MySQL DB (Feb. 2021)
+## Squid Proxy & MySQL DB (Feb. & Mar. 2021)
 
 ---
 
@@ -10,7 +10,7 @@
 
 ---
 
-## Squid Install Steps (for DB):
+## Squid Install Steps:
 - mkdir /build          
 - cd /build      
 - git clone https://github.com/squid-cache/squid.git  squid       
