@@ -24,10 +24,7 @@
 - make install         
 
 ### Location of Squid Files:  
-- cd /opt/squid     
-
-### Add squid to $PATH:
-- export PATH=$PATH:/opt/squid/sbin/       
+- cd /opt/squid      
 
 ### Add Squid User & Give Permission to run/var/log folders:    
 - adduser squid           
@@ -45,9 +42,13 @@
 ### Copy files to destination:
 - cp /git/squidproxy-mysql-php-configuration/squid.conf /opt/squid/etc/ && cp /git/squidproxy-mysql-php-configuration/Whitelist/allowed_sites.acl /opt/squid/etc/ && cp /git/squidproxy-mysql-php-configuration/MySQLFiles/basic_db_auth /opt/squid/libexec/          
 
-### Starting Squid:
-- su squid          
+### Switch to squid user:
+- su squid      
 
+### Add squid to $PATH:
+- export PATH=$PATH:/opt/squid/sbin/      
+
+### Starting Squid:    
 After compiling squid, run this command to verify your configuration file. If this outputs any errors then these are syntax errors or other fatal misconfigurations and needs to be corrected before you continue. If it is silent and immediately gives back the command prompt then your squid.conf is syntactically correct and could be understood by Squid.       
 - squid -k parse        
 
