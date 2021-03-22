@@ -12,21 +12,28 @@
 
 ## Squid Install Steps (for DB):
 - cd /tmp/    
-- wget http://www.squid-cache.org/Versions/v4/squid-4.14.tar.gz       
-- tar -xvzf squid-4.14.tar.gz    
-- cd squid-4.14/       
-- ./configure --prefix=/opt/squid/ --with-default-user=squid --enable-ssl --disable-inlined --with-logdir=/opt/squid/log/squid --with-pidfile=/opt/squid/run/squid.pid --enable-storeio=ufs,aufs --enable-removal-policies=lru,heap --enable-icmp --enable-useragent-log --enable-referer-log --enable-cache-digests --with-large-files --disable-auto-locale --disable-translation --enable-linux-netfilter --enable-delay-pools --disable-htcp --disable-wccp --disable-wccp2 --enable-arp-acl --disable-optimizations       
+- git clone https://github.com/squid-cache/squid.git squid       
+- cd squid     
+- git branch -r       
+- git checkout v4        
+- ./bootstrap.sh         
+- mkdir build; cd build            
+- ../configure --prefix=/opt/squid/ --with-default-user=squid --enable-ssl --disable-inlined --with-logdir=/opt/squid/log/squid --with-pidfile=/opt/squid/run/squid.pid --enable-storeio=ufs,aufs --enable-removal-policies=lru,heap --enable-icmp --enable-useragent-log --enable-referer-log --enable-cache-digests --with-large-files --disable-auto-locale --disable-translation --enable-linux-netfilter --enable-delay-pools --disable-htcp --disable-wccp --disable-wccp2 --enable-arp-acl --disable-optimizations       
 - make all     
 - make install         
 
-### Give permission to caching/log folder:        
-- chmod -R ugo+rwx /opt/squid/           
-
 ### Location of Squid Files:  
-- cd /opt/squid    
+- cd /opt/squid     
 
 ### Add squid to $PATH:
-- export PATH=$PATH:/opt/squid/sbin/
+- export PATH=$PATH:/opt/squid/sbin/       
+
+### Add Squid User & Give Permission to run/var/log folders:    
+- adduser squid           
+
+- chown -R squid:squid /opt/squid/run         
+- chown -R squid:squid /opt/squid/var            
+- chown -R squid:squid /opt/squid/log           
 
 ### Git Clone Folder:
 - mkdir /git      
@@ -44,6 +51,8 @@
 - cp MySQLFiles/basic_db_auth /opt/squid/libexec/          
 
 ### Starting Squid:
+- su squid          
+
 After compiling squid, run this command to verify your configuration file. If this outputs any errors then these are syntax errors or other fatal misconfigurations and needs to be corrected before you continue. If it is silent and immediately gives back the command prompt then your squid.conf is syntactically correct and could be understood by Squid.       
 - squid -k parse        
 
@@ -52,6 +61,9 @@ Create swap directories using -z.
 
 If you want to run squid in the background or on startup, leave off all options:          
 - squid           
+
+Check if squid is running:      
+- ps -e | grep squid           
 
 [SOURCE](https://wiki.squid-cache.org/SquidFaq/InstallingSquid)             
 
