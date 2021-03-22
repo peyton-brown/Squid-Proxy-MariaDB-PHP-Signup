@@ -11,8 +11,9 @@
 ---
 
 ## Squid Install Steps (for DB):
-- cd /tmp/    
-- git clone https://github.com/squid-cache/squid.git squid       
+- mkdir /build          
+- cd /build      
+- git clone https://github.com/squid-cache/squid.git  squid       
 - cd squid     
 - git branch -r       
 - git checkout v4        
