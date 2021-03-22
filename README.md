@@ -39,7 +39,7 @@
 - mkdir /git      
 - cd /git/       
 - git clone https://github.com/peyton-brown/squidproxy-mysql-php-configuration.git              
-- cd /squidproxy-mysql-php-configuration.git             
+- cd squidproxy-mysql-php-configuration.git             
 
 ### Copy squid.conf:
 - cp squid.conf /opt/squid/etc/            
