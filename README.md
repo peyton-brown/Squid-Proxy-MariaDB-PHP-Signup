@@ -42,14 +42,8 @@
 - git clone https://github.com/peyton-brown/squidproxy-mysql-php-configuration.git              
 - cd squidproxy-mysql-php-configuration.git             
 
-### Copy squid.conf:
-- cp squid.conf /opt/squid/etc/            
-
-### Copy Whitelist:
-- cp Whitelist/allowed_sites.acl /opt/squid/etc/         
-
-### Copy basic_db_auth:
-- cp MySQLFiles/basic_db_auth /opt/squid/libexec/          
+### Copy files to destination:
+- cp /git/squidproxy-mysql-php-configuration/squid.conf /opt/squid/etc/ ; cp /git/squidproxy-mysql-php-configuration/Whitelist/allowed_sites.acl /opt/squid/etc/ ; cp cp /git/squidproxy-mysql-php-configuration/MySQLFiles/basic_db_auth /opt/squid/libexec/          
 
 ### Starting Squid:
 - su squid          
