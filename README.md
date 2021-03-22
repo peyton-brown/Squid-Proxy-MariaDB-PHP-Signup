@@ -43,7 +43,7 @@
 - cd squidproxy-mysql-php-configuration.git             
 
 ### Copy files to destination:
-- cp /git/squidproxy-mysql-php-configuration/squid.conf /opt/squid/etc/ ; cp /git/squidproxy-mysql-php-configuration/Whitelist/allowed_sites.acl /opt/squid/etc/ ; cp cp /git/squidproxy-mysql-php-configuration/MySQLFiles/basic_db_auth /opt/squid/libexec/          
+- cp /git/squidproxy-mysql-php-configuration/squid.conf /opt/squid/etc/ && cp /git/squidproxy-mysql-php-configuration/Whitelist/allowed_sites.acl /opt/squid/etc/ && cp /git/squidproxy-mysql-php-configuration/MySQLFiles/basic_db_auth /opt/squid/libexec/          
 
 ### Starting Squid:
 - su squid          
