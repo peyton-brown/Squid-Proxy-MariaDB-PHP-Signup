@@ -15,7 +15,7 @@
 - wget http://www.squid-cache.org/Versions/v4/squid-4.14.tar.gz       
 - tar -xvzf squid-4.14.tar.gz    
 - cd squid-4.14/       
-- ./configure --prefix=/opt/squid/ --with-logdir=/opt/squid/var/cache/squid/ --with-pidfile=/opt/squid/var/run/squid.pid --enable-storeio=ufs,aufs --enable-removal-policies=lru,heap --enable-icmp --enable-useragent-log --enable-referer-log --enable-cache-digests --with-large-files        
+- ./configure --prefix=/opt/squid/ --with-default-user=squid --enable-ssl --disable-inlined --with-logdir=/opt/squid/log/squid --with-pidfile=/opt/squid/run/squid.pid --enable-storeio=ufs,aufs --enable-removal-policies=lru,heap --enable-icmp --enable-useragent-log --enable-referer-log --enable-cache-digests --with-large-files --disable-auto-locale --disable-translation --enable-linux-netfilter --enable-delay-pools --disable-htcp --disable-wccp --disable-wccp2 --enable-arp-acl --disable-optimizations       
 - make all     
 - make install         
 
