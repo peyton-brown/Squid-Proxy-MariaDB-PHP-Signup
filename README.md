@@ -40,13 +40,10 @@
 - cd squidproxy-mysql-php-configuration.git             
 
 ### Copy files to destination:
-- cp /git/squidproxy-mysql-php-configuration/squid.conf /opt/squid/etc/ && cp /git/squidproxy-mysql-php-configuration/Whitelist/allowed_sites.acl /opt/squid/etc/ && cp /git/squidproxy-mysql-php-configuration/MySQLFiles/basic_db_auth /opt/squid/libexec/     
+- cp /git/squidproxy-mysql-php-configuration/squid.conf /opt/squid/etc/   &&    cp /git/squidproxy-mysql-php-configuration/Whitelist/allowed_sites.acl /opt/squid/etc/    &&    cp /git/squidproxy-mysql-php-configuration/MySQLFiles/basic_db_auth /opt/squid/libexec/     
 
 ### Edit the http_port to your ip in squid.conf:        
 - http_port ipv4:3128         
-
-### Edit "host=" in basic_db_auth file to your ip:        
-- my $dsn = "DBI:mysql:database=squid;host=192.168.1.1";                
 
 ### Switch to squid user:
 - su squid      
