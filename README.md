@@ -6,7 +6,7 @@
 
 ## Requirements:
 - apt-get update         
-- apt-get install dpkg-dev libldap2-dev libpam0g-dev libdb-dev cdbs libsasl2-dev debhelper libcppunit-dev libkrb5-dev comerr-dev libcap2-dev libecap3-dev libexpat1-dev libxml2-dev autotools-dev libltdl-dev pkg-config libnetfilter-conntrack-dev nettle-dev libgnutls28-dev build-essential binutils autoconf automake grep wget net-tools g++ git vim gawk perl mysql-server -y      
+- apt-get install dpkg-dev libldap2-dev libpam0g-dev libdb-dev cdbs libsasl2-dev debhelper libcppunit-dev libkrb5-dev comerr-dev libcap2-dev libecap3-dev libexpat1-dev libxml2-dev autotools-dev libltdl-dev pkg-config libnetfilter-conntrack-dev nettle-dev libgnutls28-dev build-essential binutils autoconf automake grep wget net-tools g++ git vim gawk perl -y      
 
 ---
 
@@ -40,7 +40,11 @@
 - cd squidproxy-mysql-php-configuration.git             
 
 ### Copy files to destination:
-- cp /git/squidproxy-mysql-php-configuration/squid.conf /opt/squid/etc/   &&    cp /git/squidproxy-mysql-php-configuration/Whitelist/allowed_sites.acl /opt/squid/etc/    &&    cp /git/squidproxy-mysql-php-configuration/MySQLFiles/basic_db_auth /opt/squid/libexec/     
+- cp /git/squidproxy-mysql-php-configuration/squid.conf /opt/squid/etc/
+
+- cp /git/squidproxy-mysql-php-configuration/Whitelist/allowed_sites.acl /opt/squid/etc/
+
+- cp /git/squidproxy-mysql-php-configuration/MySQLFiles/basic_db_auth /opt/squid/libexec/     
 
 ### Edit the http_port to your ip in squid.conf:        
 - http_port ipv4:3128         
@@ -69,6 +73,7 @@ Check if squid is running:
 ---
 
 ## MySQL-Server Install Steps:
+### As Root:
 - apt-get install mysql-server    
 - mysql_secure_installation   
 
