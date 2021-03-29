@@ -51,17 +51,43 @@ RUN mkdir /build \
   && make \
   && make install*
 
-ENV MYSQL_USER=mysql \
-    MYSQL_VERSION=8.0.23 \
-    MYSQL_DATA_DIR=/mysql/lib/mysql \
-    MYSQL_RUN_DIR=/mysql/run/mysqld \
-    MYSQL_LOG_DIR=/mysql/var/log/mysql
+RUN adduser squid \
+  && chown -R squid:squid /opt/squid/run \
+  && chown -R squid:squid /opt/squid/var \
+  && chown -R squid:squid /opt/squid/log*
 
-RUN apt-get update \
-    && DEBIAN_FRONTEND=noninteractive apt-get install -y mysql-server=${MYSQL_VERSION}* \
-    && rm -rf ${MYSQL_DATA_DIR} \
-    && rm -rf /var/lib/apt/lists/*
+RUN mkdir /git \
+  && cd /git \
+  && git clone https://github.com/peyton-brown/squidproxy-mysql-php-configuration.git \
+  && cd squidproxy-mysql-php-configuration.git \
+  && cp /git/squidproxy-mysql-php-configuration/squid.conf /opt/squid/etc/ \
+  && cp /git/squidproxy-mysql-php-configuration/Whitelist/allowed_sites.acl /opt/squid/etc/ \
+  && cp /git/squidproxy-mysql-php-configuration/MySQLFiles/basic_db_auth /opt/squid/libexec/*
 
-RUN chmod 755 /sbin/entrypoint.sh
+RUN echo 'Edit the http_port to your ip in squid.conf (/opt/squid/etc/squid.conf)'
 
-EXPOSE 3306/tcp
+RUN su squid \
+  && export PATH=$PATH:/opt/squid/sbin/*
+
+RUN squid -k parse \
+  && squid -z \
+  && squid*
+
+RUN ps -e | grep squid
+
+EXPOSE 3128/tcp
+
+#ENV MYSQL_USER=mysql \
+#    MYSQL_VERSION=8.0.23 \
+#    MYSQL_DATA_DIR=/mysql/lib/mysql \
+#    MYSQL_RUN_DIR=/mysql/run/mysqld \
+#    MYSQL_LOG_DIR=/mysql/var/log/mysql
+
+#RUN apt-get update \
+#    && DEBIAN_FRONTEND=noninteractive apt-get install -y mysql-server=${MYSQL_VERSION}* \
+#    && rm -rf ${MYSQL_DATA_DIR} \
+#    && rm -rf /var/lib/apt/lists/*
+
+#RUN chmod 755 /sbin/entrypoint.sh
+
+#EXPOSE 3306/tcp
