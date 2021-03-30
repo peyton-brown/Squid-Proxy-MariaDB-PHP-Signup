@@ -72,6 +72,9 @@ Check if squid is running:
 
 ## Squid Install Steps: (Docker)
 
+### Edit the http_port to your ip in squid.conf:        
+- http_port ipv4:3128   
+
 ### Switch to squid user:
 - su squid      
 
