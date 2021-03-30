@@ -6,7 +6,7 @@
 
 ## Requirements:
 - apt-get update         
-- apt-get install dpkg-dev libldap2-dev libpam0g-dev libdb-dev cdbs libsasl2-dev debhelper libcppunit-dev libkrb5-dev comerr-dev libcap2-dev libecap3-dev libexpat1-dev libxml2-dev autotools-dev libltdl-dev pkg-config libnetfilter-conntrack-dev nettle-dev libgnutls28-dev build-essential binutils autoconf automake grep wget net-tools g++ git vim gawk perl -y      
+- apt-get install dpkg-dev libldap2-dev libpam0g-dev libdb-dev cdbs libsasl2-dev debhelper libcppunit-dev libkrb5-dev comerr-dev libcap2-dev libecap3-dev libexpat1-dev libxml2-dev autotools-dev libltdl-dev pkg-config libnetfilter-conntrack-dev nettle-dev libgnutls28-dev build-essential binutils autoconf automake grep wget net-tools g++ git vim gawk perl software-properties-common devscripts equivs -y        
 
 ---
 
@@ -94,10 +94,13 @@ Check if squid is running:
 ---
 
 ## MariaDB Install Steps:
-- cd /tmp
-- wget https://mirror.nodesdirect.com/mariadb/mariadb-10.5.9/source/mariadb-10.5.9.tar.gz
-- tar xzf mariadb-10.5.9.tar.gz
-- cd mariadb-10.5.9/
+- cd /tmp       
+- wget https://mirror.nodesdirect.com/mariadb/mariadb-10.5.9/source/mariadb-10.5.9.tar.gz          
+- tar xzf mariadb-10.5.9.tar.gz; cd mariadb-10.5.9/         
+- apt-key adv --fetch-keys 'https://mariadb.org/mariadb_release_signing_key.asc'; add-apt-repository 'deb [arch=amd64,arm64,ppc64el] https://mirror.nodesdirect.com/mariadb/repo/10.5.9/ubuntu focal main'        
+- apt-get build-dep mariadb-10.5.9
+- git clone --branch 10.5.9 https://github.com/MariaDB/server.git; cd server/
+- ./debian/autobake-deb.sh
 
 ---
 
