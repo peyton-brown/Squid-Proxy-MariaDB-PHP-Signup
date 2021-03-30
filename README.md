@@ -70,6 +70,26 @@ Check if squid is running:
 
 ---
 
+## Squid Install Steps: (Docker)
+
+### Switch to squid user:
+- su squid      
+
+### Add squid to $PATH:
+- export PATH=$PATH:/opt/squid/sbin/      
+
+### Starting Squid through Docker:
+Create swap directories using -z.     
+- squid -z     
+
+If you want to run squid in the background or on startup, leave off all options:          
+- squid           
+
+Check if squid is running:      
+- ps -e | grep squid       
+
+---
+
 ## MySQL-Server Install Steps:
 - cd /build        
 - wget https://dev.mysql.com/get/Downloads/MySQL-8.0/mysql-server_8.0.23-1ubuntu20.10_amd64.deb-bundle.tar

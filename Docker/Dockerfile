@@ -46,30 +46,23 @@ RUN mkdir /build; cd /build && \
     make && \
     make install
 
-#RUN adduser squid \
-#  && chown -R squid:squid /opt/squid/run \
-#  && chown -R squid:squid /opt/squid/var \
-#  && chown -R squid:squid /opt/squid/log*
+RUN DEBIAN_FRONTEND=noninteractive adduser squid && \
+    chown -R squid:squid /opt/squid/run && \
+    chown -R squid:squid /opt/squid/var && \
+    chown -R squid:squid /opt/squid/log
 
-#RUN mkdir /git \
-#  && cp /git/squidproxy-mysql-php-configuration/squid.conf /opt/squid/etc/ \
-#  && cp /git/squidproxy-mysql-php-configuration/Whitelist/allowed_sites.acl /opt/squid/etc/ \
-#  && cp /git/squidproxy-mysql-php-configuration/MySQLFiles/basic_db_auth /opt/squid/libexec/*
+RUN mkdir /git; cd /git && \
+    git clone https://github.com/peyton-brown/squidproxy-mysql-php-configuration.git
+
+RUN cp /git/squidproxy-mysql-php-configuration/squid.conf /opt/squid/etc/ && \
+    cp /git/squidproxy-mysql-php-configuration/Whitelist/allowed_sites.acl /opt/squid/etc/ && \
+    cp /git/squidproxy-mysql-php-configuration/MySQLFiles/basic_db_auth /opt/squid/libexec/
 
 RUN echo 'Edit the http_port to your ip in squid.conf (/opt/squid/etc/squid.conf)'
 
-#RUN su squid \
-#  && export PATH=$PATH:/opt/squid/sbin/*
+EXPOSE 3128/tcp
 
-#RUN squid -k parse \
-#  && squid -z \
-#  && squid*
-
-#RUN ps -e | grep squid
-
-#EXPOSE 3128/tcp
-
-#ENV MYSQL_USER=mysql \
+#ENV MYSQL_USER=squid \
 #    MYSQL_VERSION=8.0.23 \
 #    MYSQL_DATA_DIR=/mysql/lib/mysql \
 #    MYSQL_RUN_DIR=/mysql/run/mysqld \
