@@ -2,7 +2,8 @@ FROM ubuntu:20.04
 
 LABEL maintainer="peytonedwardbrown@gmail.com"
 
-RUN dependendencies=" \
+RUN apt-get update && \
+    DEBIAN_FRONTEND=noninteractive apt-get install -y \
         dpkg-dev \
         libldap2-dev \
         libdb-dev \
@@ -33,49 +34,40 @@ RUN dependendencies=" \
         git \
         vim \
         gawk \
-        perl \
-    " \
+        perl
 
-RUN apt-get update \
-    && DEBIAN_FRONTEND=noninteractive apt-get install -y $dependendencies*
+RUN mkdir /build; cd /build && \
+    git clone https://github.com/squid-cache/squid.git squid; cd squid && \
+    git branch -r && \
+    git checkout v4 && \
+    ./bootstrap.sh && \
+    mkdir build; cd build && \
+    ../configure --prefix=/opt/squid/ --with-default-user=squid --enable-ssl --disable-inlined --with-logdir=/opt/squid/log/squid --with-pidfile=/opt/squid/run/squid.pid --enable-storeio=ufs,aufs --enable-removal-policies=lru,heap --enable-icmp --enable-useragent-log --enable-referer-log --enable-cache-digests --with-large-files --disable-auto-locale --disable-translation --enable-linux-netfilter --enable-delay-pools --disable-htcp --disable-wccp --disable-wccp2 --enable-arp-acl --disable-optimizations && \
+    make && \
+    make install
 
-RUN mkdir /build \
-  && cd /build \
-  && git clone https://github.com/squid-cache/squid.git squid \
-  && cd squid \
-  && git branch -r \
-  && git checkout v4 \
-  && ./bootstrap.sh \
-  && mkdir build; cd build \
-  && ../configure --prefix=/opt/squid/ --with-default-user=squid --enable-ssl --disable-inlined --with-logdir=/opt/squid/log/squid --with-pidfile=/opt/squid/run/squid.pid --enable-storeio=ufs,aufs --enable-removal-policies=lru,heap --enable-icmp --enable-useragent-log --enable-referer-log --enable-cache-digests --with-large-files --disable-auto-locale --disable-translation --enable-linux-netfilter --enable-delay-pools --disable-htcp --disable-wccp --disable-wccp2 --enable-arp-acl --disable-optimizations \
-  && make \
-  && make install*
+#RUN adduser squid \
+#  && chown -R squid:squid /opt/squid/run \
+#  && chown -R squid:squid /opt/squid/var \
+#  && chown -R squid:squid /opt/squid/log*
 
-RUN adduser squid \
-  && chown -R squid:squid /opt/squid/run \
-  && chown -R squid:squid /opt/squid/var \
-  && chown -R squid:squid /opt/squid/log*
-
-RUN mkdir /git \
-  && cd /git \
-  && git clone https://github.com/peyton-brown/squidproxy-mysql-php-configuration.git \
-  && cd squidproxy-mysql-php-configuration.git \
-  && cp /git/squidproxy-mysql-php-configuration/squid.conf /opt/squid/etc/ \
-  && cp /git/squidproxy-mysql-php-configuration/Whitelist/allowed_sites.acl /opt/squid/etc/ \
-  && cp /git/squidproxy-mysql-php-configuration/MySQLFiles/basic_db_auth /opt/squid/libexec/*
+#RUN mkdir /git \
+#  && cp /git/squidproxy-mysql-php-configuration/squid.conf /opt/squid/etc/ \
+#  && cp /git/squidproxy-mysql-php-configuration/Whitelist/allowed_sites.acl /opt/squid/etc/ \
+#  && cp /git/squidproxy-mysql-php-configuration/MySQLFiles/basic_db_auth /opt/squid/libexec/*
 
 RUN echo 'Edit the http_port to your ip in squid.conf (/opt/squid/etc/squid.conf)'
 
-RUN su squid \
-  && export PATH=$PATH:/opt/squid/sbin/*
+#RUN su squid \
+#  && export PATH=$PATH:/opt/squid/sbin/*
 
-RUN squid -k parse \
-  && squid -z \
-  && squid*
+#RUN squid -k parse \
+#  && squid -z \
+#  && squid*
 
-RUN ps -e | grep squid
+#RUN ps -e | grep squid
 
-EXPOSE 3128/tcp
+#EXPOSE 3128/tcp
 
 #ENV MYSQL_USER=mysql \
 #    MYSQL_VERSION=8.0.23 \
