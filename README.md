@@ -93,12 +93,19 @@ Check if squid is running:
 
 ---
 
+## MariaDB Install Steps:
+- cd /tmp
+- wget https://mirror.nodesdirect.com/mariadb/mariadb-10.5.9/source/mariadb-10.5.9.tar.gz
+- tar xzf mariadb-10.5.9.tar.gz
+- cd mariadb-10.5.9/
+
+---
+
 ## MySQL-Server Install Steps:
 - cd /build        
-- wget https://dev.mysql.com/get/Downloads/MySQL-8.0/mysql-server_8.0.23-1ubuntu20.10_amd64.deb-bundle.tar
-- tar xzf mysql-8.0.23.tar.gz
-- cd mysql-server/
-
+- wget https://dev.mysql.com/get/Downloads/MySQL-8.0/mysql-8.0.23.tar.gz
+- tar xzf mysql-8.0.23.tar.gz     
+- cd mysql-8.0.23/       
 
 The first prompt will ask whether you’d like to set up the Validate Password Plugin, which can be used to test the strength of your MySQL password. Regardless of your choice, the next prompt will be to set a password for the MySQL root user. Enter and then confirm a secure password of your choice. From there, you can press Y and then ENTER to accept the defaults for all the subsequent questions. [SOURCE](https://www.digitalocean.com/community/tutorials/how-to-install-mysql-on-ubuntu-20-04)    
 
