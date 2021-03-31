@@ -2,6 +2,10 @@ FROM ubuntu:20.04
 
 LABEL maintainer="peytonedwardbrown@gmail.com"
 
+#
+## Squid
+#
+
 RUN apt-get update && \
     DEBIAN_FRONTEND=noninteractive apt-get install -y \
         dpkg-dev \
@@ -17,6 +21,7 @@ RUN apt-get update && \
         libecap3-dev \
         libexpat1-dev \
         libxml2-dev \
+        libncurses5-dev \
         autotools-dev \
         libltdl-dev \
         pkg-config \
@@ -25,16 +30,23 @@ RUN apt-get update && \
         libgnutls28-dev \
         build-essential \
         binutils \
+        bison \
+        apt-utils \
         autoconf \
         automake \
         grep \
         wget \
         net-tools \
+        curl \
         g++ \
         git \
         vim \
         gawk \
-        perl
+        perl \
+        software-properties-common \
+        devscripts \
+        equivs \
+        cmake
 
 RUN mkdir /build; cd /build && \
     git clone https://github.com/squid-cache/squid.git squid; cd squid && \
@@ -59,3 +71,13 @@ RUN cp /git/squidproxy-mysql-php-configuration/squid.conf /opt/squid/etc/ && \
     cp /git/squidproxy-mysql-php-configuration/MySQLFiles/basic_db_auth /opt/squid/libexec/
 
 EXPOSE 3128/tcp
+
+
+#
+## MariaDB
+#
+
+RUN apt-get install mariadb-server && \
+    DEBIAN_FRONTEND=noninteractive mysql_secure_installation
+
+EXPOSE 3066/tcp
