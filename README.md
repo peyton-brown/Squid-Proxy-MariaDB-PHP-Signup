@@ -6,7 +6,7 @@
 
 ## Requirements:
 - apt-get update         
-- apt-get install dpkg-dev libldap2-dev libpam0g-dev libdb-dev cdbs libsasl2-dev debhelper libcppunit-dev libkrb5-dev comerr-dev libcap2-dev libecap3-dev libexpat1-dev libxml2-dev autotools-dev libltdl-dev pkg-config libnetfilter-conntrack-dev nettle-dev libgnutls28-dev build-essential binutils autoconf automake grep wget net-tools g++ git vim gawk perl software-properties-common devscripts equivs -y        
+- apt-get install dpkg-dev libncurses5-dev libldap2-dev libpam0g-dev libdb-dev cdbs libsasl2-dev debhelper libcppunit-dev libkrb5-dev comerr-dev libcap2-dev libecap3-dev libexpat1-dev libxml2-dev autotools-dev libltdl-dev pkg-config libnetfilter-conntrack-dev nettle-dev libgnutls28-dev apt-utils bison build-essential cmake binutils autoconf automake grep wget net-tools g++ git vim gawk perl software-properties-common devscripts equivs -y        
 
 ---
 
@@ -73,7 +73,7 @@ Check if squid is running:
 ## Squid Install Steps: (Docker)
 
 ### Edit the http_port to your ip in squid.conf:        
-- http_port ipv4:3128   
+- http_port ipv4:3128      
 
 ### Switch to squid user:
 - su squid      
@@ -93,14 +93,29 @@ Check if squid is running:
 
 ---
 
-## MariaDB Install Steps:
-- cd /tmp       
-- wget https://mirror.nodesdirect.com/mariadb/mariadb-10.5.9/source/mariadb-10.5.9.tar.gz          
-- tar xzf mariadb-10.5.9.tar.gz; cd mariadb-10.5.9/         
-- apt-key adv --fetch-keys 'https://mariadb.org/mariadb_release_signing_key.asc'; add-apt-repository 'deb [arch=amd64,arm64,ppc64el] https://mirror.nodesdirect.com/mariadb/repo/10.5.9/ubuntu focal main'        
-- apt-get build-dep mariadb-10.5.9
-- git clone --branch 10.5.9 https://github.com/MariaDB/server.git; cd server/
-- ./debian/autobake-deb.sh
+## MariaDB Install Steps:        
+- git clone --branch 10.5 https://github.com/MariaDB/server.git mariadb       
+
+---
+
+## Connect to Proxy with FireFox:
+
+- On Firefox, go to options   
+- Network Settings   
+- Manual proxy configuration   
+- Go to your Ubuntu Server and type in 'ifconfig'   
+- Find the inet address (ip address)   
+- Go back to Firefox   
+- Enter that ip into HTTP Proxy   
+- Check 'Also use this proxy for FTP and HTTPS'   
+- Make sure the port is the same as the one in squid.conf   
+- Click OK   
+
+---
+
+## Potential Error Messages:
+
+1.
 
 ---
 
@@ -140,26 +155,3 @@ Change '$db_passwdcol' to the password column in mysql table
 - Example: (my $db_passwd = "password";)    
 
 [SOURCE](http://linchpincorner.blogspot.com/2016/08/squid-proxy-server-configuration-with_23.html)
-
----
-
-## Connect to Proxy with FireFox:
-
-- On Firefox, go to options   
-- Network Settings   
-- Manual proxy configuration   
-- Go to your Ubuntu Server and type in 'ifconfig'   
-- Find the inet address (ip address)   
-- Go back to Firefox   
-- Enter that ip into HTTP Proxy   
-- Check 'Also use this proxy for FTP and HTTPS'   
-- Make sure the port is the same as the one in squid.conf   
-- Click OK   
-
----
-
-## Potential Error Messages:
-
-1.
-
----
