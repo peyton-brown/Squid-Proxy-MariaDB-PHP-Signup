@@ -77,7 +77,6 @@ EXPOSE 3128/tcp
 ## MariaDB
 #
 
-RUN apt-get install mariadb-server && \
-    DEBIAN_FRONTEND=noninteractive mysql_secure_installation
+RUN apt-get install mariadb-server -y
 
 EXPOSE 3066/tcp
