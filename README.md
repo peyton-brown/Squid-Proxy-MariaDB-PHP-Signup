@@ -73,7 +73,7 @@ Check if squid is running:
 ## Squid Install Steps: (Docker)
 
 ### Build Docker Image:
-- docker build -t peyton-brown/ubuntu-squid-mariadb:1.2 .       
+- docker build -t ubuntu-squid-mariadb:1.2 .       
 
 ### Edit the http_port to your ip in squid.conf:        
 - http_port ipv4:3128      
