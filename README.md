@@ -72,6 +72,9 @@ Check if squid is running:
 
 ## Squid Install Steps: (Docker)
 
+### Build Docker Image:
+- docker build -t peyton-brown/ubuntu-squid-mariadb:1.2 .       
+
 ### Edit the http_port to your ip in squid.conf:        
 - http_port ipv4:3128      
 
@@ -95,7 +98,7 @@ Check if squid is running:
 
 ## MariaDB Install Steps:        
 - apt-get install mariadb-server       
-- mysql_secure_installation       
+- service mysql restart; mysql_secure_installation       
 
 This will take you through a series of prompts where you can make some changes to your MariaDB installation’s security options. The first prompt will ask you to enter the current database root password. Since you have not set one up yet, press ENTER to indicate “none”.       
 
