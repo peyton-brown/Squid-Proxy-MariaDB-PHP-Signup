@@ -112,7 +112,7 @@ From there, you can press Y and then ENTER to accept the defaults for all the su
 
 ---
 
-## Squid Configuration with MySQL Authentication:
+## Squid Configuration with MariaDB Authentication:
 
 - vim /opt/squid/libexec/basic_db_auth     
 
