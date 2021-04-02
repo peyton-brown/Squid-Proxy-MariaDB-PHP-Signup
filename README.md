@@ -106,41 +106,9 @@ The next prompt asks you whether you’d like to set up a database root password
 
 From there, you can press Y and then ENTER to accept the defaults for all the subsequent questions. This will remove some anonymous users and the test database, disable remote root logins, and load these new rules so that MariaDB immediately implements the changes you have made.      
 
----
+- mariadb
 
-## Connect to Proxy with FireFox:
-
-- On Firefox, go to options   
-- Network Settings   
-- Manual proxy configuration   
-- Go to your Ubuntu Server and type in 'ifconfig'   
-- Find the inet address (ip address)   
-- Go back to Firefox   
-- Enter that ip into HTTP Proxy   
-- Check 'Also use this proxy for FTP and HTTPS'   
-- Make sure the port is the same as the one in squid.conf   
-- Click OK   
-
----
-
-## Potential Error Messages:
-
-1. MariaDB: ERROR 2002 (HY000): Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2)
-    - SOLUTION: service mysql restart
-
----
-
-## MySQL-Server Install Steps:
-- cd /build        
-- wget https://dev.mysql.com/get/Downloads/MySQL-8.0/mysql-8.0.23.tar.gz
-- tar xzf mysql-8.0.23.tar.gz     
-- cd mysql-8.0.23/       
-
-The first prompt will ask whether you’d like to set up the Validate Password Plugin, which can be used to test the strength of your MySQL password. Regardless of your choice, the next prompt will be to set a password for the MySQL root user. Enter and then confirm a secure password of your choice. From there, you can press Y and then ENTER to accept the defaults for all the subsequent questions. [SOURCE](https://www.digitalocean.com/community/tutorials/how-to-install-mysql-on-ubuntu-20-04)    
-
-- sudo mysql   
-
-### MySQL code is in the MySQLFiles folder.
+### MariaDB Query Code is in the MariaDB folder.
 
 ---
 
@@ -166,3 +134,27 @@ Change '$db_passwdcol' to the password column in mysql table
 - Example: (my $db_passwd = "password";)    
 
 [SOURCE](http://linchpincorner.blogspot.com/2016/08/squid-proxy-server-configuration-with_23.html)
+
+---
+
+## Connect to Proxy with FireFox:
+
+- On Firefox, go to options   
+- Network Settings   
+- Manual proxy configuration   
+- Go to your Ubuntu Server and type in 'ifconfig'   
+- Find the inet address (ip address)   
+- Go back to Firefox   
+- Enter that ip into HTTP Proxy   
+- Check 'Also use this proxy for FTP and HTTPS'   
+- Make sure the port is the same as the one in squid.conf   
+- Click OK   
+
+---
+
+## Potential Error Messages:
+
+1. MariaDB: ERROR 2002 (HY000): Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2)
+    - SOLUTION: service mysql restart
+
+---
