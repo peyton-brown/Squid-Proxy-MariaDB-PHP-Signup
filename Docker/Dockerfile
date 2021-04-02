@@ -77,6 +77,7 @@ EXPOSE 3128/tcp
 ## MariaDB
 #
 
-RUN apt-get install mariadb-server -y
+RUN apt-get install mariadb-server -y && \
+    service mysql restart
 
 EXPOSE 3066/tcp
