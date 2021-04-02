@@ -114,13 +114,12 @@ From there, you can press Y and then ENTER to accept the defaults for all the su
 
 ## Squid Configuration with MySQL Authentication:
 
-- cd /opt/squid/libexec/    
-- sudo vim basic_db_auth    
+- vim /opt/squid/libexec/basic_db_auth     
 
 Search for 'my $dsn ='   
 - Example: (my $dsn = "DBI:mysql:database=yourdatabasename;host=192.168.1.1";)    
 Change 'yourdatabasename' to whatever your database name is    
-Change 'host' to ip of mysql server (ifconfig)    
+Change 'host' to ip of mysql server (ifconfig)      
 
 Leave '$db_user' & '$db_passwd' as undef    
 
