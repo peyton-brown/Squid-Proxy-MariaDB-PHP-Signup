@@ -34,15 +34,15 @@
 ### Git Clone Folder:
 - mkdir /git      
 - cd /git/       
-- git clone https://github.com/peyton-brown/squidproxy-mysql-php-configuration.git              
-- cd squidproxy-mysql-php-configuration.git             
+- git clone https://github.com/peyton-brown/Squid_Proxy-MariaDB-PHP-Configuration.git              
+- cd Squid_Proxy-MariaDB-PHP-Configuration             
 
 ### Copy files to destination:
-- cp /git/squidproxy-mysql-php-configuration/squid.conf /opt/squid/etc/
+- cp /git/Squid_Proxy-MariaDB-PHP-Configuration/squid.conf /opt/squid/etc/
 
-- cp /git/squidproxy-mysql-php-configuration/Whitelist/allowed_sites.acl /opt/squid/etc/
+- cp /git/Squid_Proxy-MariaDB-PHP-Configuration/Whitelist/allowed_sites.acl /opt/squid/etc/
 
-- cp /git/squidproxy-mysql-php-configuration/MySQLFiles/basic_db_auth /opt/squid/libexec/     
+- cp /git/Squid_Proxy-MariaDB-PHP-Configuration/MySQLFiles/basic_db_auth /opt/squid/libexec/     
 
 ### Edit the http_port to your ip in squid.conf:        
 - http_port ipv4:3128         
