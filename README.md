@@ -42,7 +42,7 @@
 
 - cp /git/Squid_Proxy-MariaDB-PHP-Configuration/Whitelist/allowed_sites.acl /opt/squid/etc/
 
-- cp /git/Squid_Proxy-MariaDB-PHP-Configuration/MySQLFiles/basic_db_auth /opt/squid/libexec/     
+- cp /git/Squid_Proxy-MariaDB-PHP-Configuration/MariaDB/basic_db_auth /opt/squid/libexec/     
 
 ### Edit the http_port to your ip in squid.conf:        
 - http_port ipv4:3128         
