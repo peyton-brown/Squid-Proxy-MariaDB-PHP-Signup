@@ -6,7 +6,7 @@ LABEL maintainer="peytonedwardbrown@gmail.com"
 ## Squid
 #
 
-RUN apt-get update && apt-get upgrade -y && \
+RUN apt-get update && \
     DEBIAN_FRONTEND=noninteractive apt-get install -y \
         dpkg-dev \
         libldap2-dev \
@@ -68,7 +68,7 @@ RUN mkdir /git; cd /git && \
 
 RUN cp /git/Squid_Proxy-MariaDB-PHP-Configuration/squid.conf /opt/squid/etc/ && \
     cp /git/Squid_Proxy-MariaDB-PHP-Configuration/Whitelist/allowed_sites.acl /opt/squid/etc/ && \
-    cp /git/Squid_Proxy-MariaDB-PHP-Configuration/MySQLFiles/basic_db_auth /opt/squid/libexec/
+    cp /git/Squid_Proxy-MariaDB-PHP-Configuration/MariaDB/basic_db_auth /opt/squid/libexec/
 
 EXPOSE 3128/tcp
 
