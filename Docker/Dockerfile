@@ -50,7 +50,6 @@ RUN apt-get update && \
 
 RUN mkdir /build; cd /build && \
     git clone https://github.com/squid-cache/squid.git squid; cd squid && \
-    git branch -r && \
     git checkout v4 && \
     ./bootstrap.sh && \
     mkdir build; cd build && \
@@ -67,7 +66,7 @@ RUN mkdir /git; cd /git && \
     git clone https://github.com/peyton-brown/Squid_Proxy-MariaDB-PHP-Configuration.git
 
 RUN cp /git/Squid_Proxy-MariaDB-PHP-Configuration/squid.conf /opt/squid/etc/ && \
-    cp /git/Squid_Proxy-MariaDB-PHP-Configuration/Whitelist/allowed_sites.acl /opt/squid/etc/ && \ 
+    cp /git/Squid_Proxy-MariaDB-PHP-Configuration/Whitelist/allowed_sites.acl /opt/squid/etc/ && \
     cp /git/Squid_Proxy-MariaDB-PHP-Configuration/MariaDB/basic_db_auth /opt/squid/libexec/
 
 EXPOSE 3128/tcp
