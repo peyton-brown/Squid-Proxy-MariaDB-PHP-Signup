@@ -12,8 +12,7 @@
 
 ## Squid Install Steps:
 - mkdir /build; cd /build   
-- git clone https://github.com/squid-cache/squid.git squid; cd squid     
-- git branch -r       
+- git clone https://github.com/squid-cache/squid.git squid; cd squid        
 - git checkout v4        
 - ./bootstrap.sh         
 - mkdir build; cd build            
