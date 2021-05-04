@@ -1,5 +1,3 @@
-CREATE USER 'squiduser'@'localhost' IDENTIFIED BY 'squidpwd';
-
 CREATE DATABASE squid;
 
 USE squid;
@@ -16,5 +14,3 @@ INSERT INTO users(username, password, fullname) VALUES ('testUser', 'testPWD', '
 SHOW TABLES;
 
 SELECT * FROM users;
-
-GRANT ALL PRIVILEGES ON squid.* TO 'squiduser'@'localhost';
