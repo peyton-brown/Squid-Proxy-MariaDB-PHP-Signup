@@ -30,8 +30,7 @@
 - chown -R squid:squid /opt/squid/log           
 
 ### Git Clone Folder:
-- mkdir /git      
-- cd /git/       
+- mkdir /git; cd /git/       
 - git clone https://github.com/peyton-brown/Squid_Proxy-MariaDB-PHP-Configuration.git              
 - cd Squid_Proxy-MariaDB-PHP-Configuration             
 
