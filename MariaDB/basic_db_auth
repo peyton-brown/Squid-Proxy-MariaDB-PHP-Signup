@@ -73,11 +73,11 @@ Selects the correct salt to evaluate passwords
 
 =item B<--persist>
 
-Keep a persistent database connection open between queries. 
+Keep a persistent database connection open between queries.
 
 =item B<--joomla>
 
-Tells helper that user database is Joomla DB.  So their unusual salt 
+Tells helper that user database is Joomla DB.  So their unusual salt
 hashing is understood.
 
 =back
@@ -136,8 +136,8 @@ use Digest::SHA qw(sha1 sha1_hex sha1_base64);
 my $dsn = "DBI:mysql:database=squid;host=192.168.1.1";
 my $db_user = undef;
 my $db_passwd = undef;
-my $db_table = "users";
-my $db_usercol = "username";
+my $db_table = "passwd";
+my $db_usercol = "user";
 my $db_passwdcol = "password";
 my $db_cond = "enabled = 1";
 my $plaintext = 0;
