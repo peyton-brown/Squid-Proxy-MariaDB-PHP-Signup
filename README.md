@@ -25,7 +25,6 @@
 ### Add Squid User & Give Permission to run/var/log folders:    
 - adduser squid           
 
-- chown -R squid:squid /opt/squid/run         
 - chown -R squid:squid /opt/squid/var            
 - chown -R squid:squid /opt/squid/log           
 
