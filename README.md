@@ -104,7 +104,7 @@ From there, you can press Y and then ENTER to accept the defaults for all the su
 
 - mariadb
 
-### [MariaDB Query Code is in the MariaDB folder.](https://github.com/peyton-brown/Squid_Proxy-MariaDB-PHP-Configuration/blob/main/MariaDB/MariaDB_Queries.sql)
+### Query Code is in the [MariaDB folder.](https://github.com/peyton-brown/Squid_Proxy-MariaDB-PHP-Configuration/blob/main/MariaDB/MariaDB_Queries.sql)
 
 ---
 
