@@ -41,7 +41,28 @@
 - cp /git/Squid_Proxy-MariaDB-PHP-Configuration/MariaDB/basic_db_auth /opt/squid/libexec/     
 
 ### Edit the http_port to your ip in squid.conf:        
-- http_port ipv4:3128         
+- http_port ipv4:3128  
+
+### Squid Configuration with MariaDB Authentication:
+- vim /opt/squid/libexec/basic_db_auth     
+
+Search for 'my $dsn ='   
+- Example: (my $dsn = "DBI:mysql:database=yourdatabasename;host=192.168.1.1";)    
+Change 'yourdatabasename' to whatever your database name is    
+Change 'host' to ip of mysql server (ifconfig)      
+
+Leave '$db_user' & '$db_passwd' as undef    
+
+Change '$db_table' to the table name where username/password is saved    
+- Example: (my $db_table = "users";)    
+
+Change '$db_usercol' to the username column in mysql table    
+- Example: (my $db_usercol = "username";)    
+
+Change '$db_passwdcol' to the password column in mysql table    
+- Example: (my $db_passwd = "password";)    
+
+[SOURCE](http://linchpincorner.blogspot.com/2016/08/squid-proxy-server-configuration-with_23.html)       
 
 ### Switch to squid user:
 - su squid      
@@ -105,30 +126,6 @@ From there, you can press Y and then ENTER to accept the defaults for all the su
 - mariadb
 
 ### Query Code is in the [MariaDB folder.](https://github.com/peyton-brown/Squid_Proxy-MariaDB-PHP-Configuration/blob/main/MariaDB/MariaDB_Queries.sql)
-
----
-
-## Squid Configuration with MariaDB Authentication:
-
-- vim /opt/squid/libexec/basic_db_auth     
-
-Search for 'my $dsn ='   
-- Example: (my $dsn = "DBI:mysql:database=yourdatabasename;host=192.168.1.1";)    
-Change 'yourdatabasename' to whatever your database name is    
-Change 'host' to ip of mysql server (ifconfig)      
-
-Leave '$db_user' & '$db_passwd' as undef    
-
-Change '$db_table' to the table name where username/password is saved    
-- Example: (my $db_table = "users";)    
-
-Change '$db_usercol' to the username column in mysql table    
-- Example: (my $db_usercol = "username";)    
-
-Change '$db_passwdcol' to the password column in mysql table    
-- Example: (my $db_passwd = "password";)    
-
-[SOURCE](http://linchpincorner.blogspot.com/2016/08/squid-proxy-server-configuration-with_23.html)
 
 ---
 
