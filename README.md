@@ -46,11 +46,9 @@
 ### Edit ip in basic_db_auth:
 * vim /opt/squid/libexec/basic_db_auth     
 
-* Search for 'my $dsn ='    
-    * Change 'yourdatabasename' to whatever your database name is    
-    * Change 'host' to ip of mysql server (ifconfig)      
-
-[SOURCE](http://linchpincorner.blogspot.com/2016/08/squid-proxy-server-configuration-with_23.html)       
+* Search for 'my $dsn ='      
+    * Change 'host' to ip of mysql server (ifconfig)
+    * [SOURCE](http://linchpincorner.blogspot.com/2016/08/squid-proxy-server-configuration-with_23.html)       
 
 ### Switch to squid user:
 - su squid      
