@@ -74,32 +74,6 @@ Check if squid is running:
 
 ---
 
-## Squid Install Steps: (Docker)
-
-### Build Docker Image:
-- docker build -t ubuntu-squid-mariadb:1.2 .       
-
-### Edit the http_port to your ip in squid.conf:        
-- http_port ipv4:3128      
-
-### Switch to squid user:
-- su squid      
-
-### Add squid to $PATH:
-- export PATH=$PATH:/opt/squid/sbin/      
-
-### Starting Squid through Docker:
-Create swap directories using -z.     
-- squid -z     
-
-If you want to run squid in the background or on startup, leave off all options:          
-- squid           
-
-Check if squid is running:      
-- ps -e | grep squid       
-
----
-
 ## MariaDB Install Steps:        
 - apt-get install mariadb-server -y       
 - service mysql restart; mysql_secure_installation       
@@ -135,5 +109,31 @@ From there, you can press Y and then ENTER to accept the defaults for all the su
 
 1. MariaDB: ERROR 2002 (HY000): Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2)
     - SOLUTION: service mysql restart
+
+---
+
+## Squid Install Steps: (Docker)
+
+### Build Docker Image:
+- docker build -t ubuntu-squid-mariadb:1.2 .       
+
+### Edit the http_port to your ip in squid.conf:        
+- http_port ipv4:3128      
+
+### Switch to squid user:
+- su squid      
+
+### Add squid to $PATH:
+- export PATH=$PATH:/opt/squid/sbin/      
+
+### Starting Squid through Docker:
+Create swap directories using -z.     
+- squid -z     
+
+If you want to run squid in the background or on startup, leave off all options:          
+- squid           
+
+Check if squid is running:      
+- ps -e | grep squid       
 
 ---
