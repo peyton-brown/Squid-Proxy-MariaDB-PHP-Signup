@@ -6,7 +6,7 @@
 
 ## Requirements:
 - apt-get update && apt-get upgrade -y         
-- apt-get install dpkg-dev libncurses5-dev libldap2-dev libpam0g-dev libdb-dev cdbs libsasl2-dev debhelper libcppunit-dev libkrb5-dev comerr-dev libcap2-dev libecap3-dev libexpat1-dev libxml2-dev autotools-dev libltdl-dev pkg-config libnetfilter-conntrack-dev nettle-dev libgnutls28-dev apt-utils bison build-essential cmake binutils autoconf automake grep wget net-tools g++ git vim gawk perl software-properties-common devscripts equivs -y        
+- apt-get install dpkg-dev libncurses5-dev libldap2-dev libpam0g-dev libdb-dev cdbs libsasl2-dev debhelper libcppunit-dev libkrb5-dev comerr-dev libcap2-dev libecap3-dev libexpat1-dev libxml2-dev autotools-dev libltdl-dev pkg-config libnetfilter-conntrack-dev nettle-dev libgnutls28-dev apt-utils bison build-essential cmake binutils autoconf automake grep wget net-tools g++ git vim gawk perl software-properties-common devscripts equivs bison flex -y        
 
 ---
 
@@ -71,6 +71,17 @@ Check if squid is running:
 - ps -e | grep squid           
 
 [SOURCE](https://wiki.squid-cache.org/SquidFaq/InstallingSquid)             
+
+---
+
+## SquidGuard Install Steps:
+
+- cd /build/
+- ./configure
+- make
+- make install
+
+http://www.squidguard.org/Downloads/squidGuard-1.3.tar.gz
 
 ---
 
