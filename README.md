@@ -43,7 +43,9 @@ Enable the squid service to start automatically when the system boots:
 Check if squid is running:       
 - ps -e | grep squid           
 
-[Squid Wiki](https://wiki.squid-cache.org/SquidFaq/InstallingSquid)             
+[Squid Wiki](https://wiki.squid-cache.org/SquidFaq/InstallingSquid)
+
+            
 [Red Hat Documentation](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/networking_guide/configuring-the-squid-caching-proxy-server)
 
 ---
