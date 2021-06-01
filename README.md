@@ -16,9 +16,9 @@
 ### Git Clone Folder:
 - mkdir /git; cd /git/       
 - git clone https://github.com/peyton-brown/Squid_Proxy-MariaDB-PHP-Configuration.git; Squid_Proxy-MariaDB-PHP-Configuration             
-- cp /git/Squid_Proxy-MariaDB-PHP-Configuration/squid.conf /etc/squid/etc/        
+- cp /git/Squid_Proxy-MariaDB-PHP-Configuration/squid.conf /etc/squid/        
 
-### Edit the http_port to your ip in squid.conf (/etc/squid/etc/):        
+### Edit the http_port to your ip in squid.conf (/etc/squid/):        
 - http_port ipv4:3128       
 
 ### Open the 3128 port in the firewall:
