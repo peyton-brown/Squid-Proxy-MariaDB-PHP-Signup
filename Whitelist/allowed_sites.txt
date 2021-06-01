@@ -1,0 +1,5 @@
+.google.com
+.duckduckgo.com
+.amazon.com
+.redhat.com
+.github.com
