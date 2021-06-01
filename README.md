@@ -41,7 +41,13 @@ Enable the squid service to start automatically when the system boots:
 - systemctl enable squid
 
 Check if squid is running:       
-- ps -e | grep squid           
+- ps -e | grep squid      
+- systemctl status squid     
+
+### Verification Steps
+To verify that the proxy works correctly, download a web page using the curl utility:       
+-  curl -O -L "https://www.redhat.com/index.html" -x "(ipv4):3128"
+If curl does not display any error and the index.html file was downloaded to the current directory, the proxy works.       
 
 [Squid Wiki](https://wiki.squid-cache.org/SquidFaq/InstallingSquid)
 
