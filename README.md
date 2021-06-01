@@ -25,8 +25,7 @@
 - http_port ipv4:3128       
 
 ### Open the 3128 port in the firewall:
-- firewall-cmd --permanent --add-port=3128/tcp          
-- firewall-cmd --reload         
+- firewall-cmd --permanent --add-port=3128/tcp; firewall-cmd --reload         
 
 ### Starting Squid:  
 - systemctl stop squid        
