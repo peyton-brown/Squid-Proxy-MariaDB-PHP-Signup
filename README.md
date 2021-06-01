@@ -19,7 +19,11 @@
 - cp /git/Squid_Proxy-MariaDB-PHP-Configuration/squid.conf /etc/squid/etc/        
 
 ### Edit the http_port to your ip in squid.conf:        
-- http_port ipv4:3128     
+- http_port ipv4:3128       
+
+### Open the 3128 port in the firewall:
+- firewall-cmd --permanent --add-port=3128/tcp          
+- firewall-cmd --reload         
 
 ### Starting Squid:  
 - systemctl stop squid        
@@ -30,12 +34,17 @@ Create swap directories using -z.
 Reconfigure squid.conf:        
 - squid -k reconfigure
 
+Start the squid service:
 - systemctl start squid    
+
+Enable the squid service to start automatically when the system boots:
+- systemctl enable squid
 
 Check if squid is running:       
 - ps -e | grep squid           
 
-[SOURCE](https://wiki.squid-cache.org/SquidFaq/InstallingSquid)             
+[Squid Wiki](https://wiki.squid-cache.org/SquidFaq/InstallingSquid)             
+[Red Hat Documentation](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/networking_guide/configuring-the-squid-caching-proxy-server)
 
 ---
 
