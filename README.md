@@ -18,7 +18,7 @@
 - git clone https://github.com/peyton-brown/Squid_Proxy-MariaDB-PHP-Configuration.git; Squid_Proxy-MariaDB-PHP-Configuration             
 - cp /git/Squid_Proxy-MariaDB-PHP-Configuration/squid.conf /etc/squid/etc/        
 
-### Edit the http_port to your ip in squid.conf:        
+### Edit the http_port to your ip in squid.conf (/etc/squid/etc/):        
 - http_port ipv4:3128       
 
 ### Open the 3128 port in the firewall:
@@ -45,7 +45,7 @@ Check if squid is running:
 
 [Squid Wiki](https://wiki.squid-cache.org/SquidFaq/InstallingSquid)
 
-            
+
 [Red Hat Documentation](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/networking_guide/configuring-the-squid-caching-proxy-server)
 
 ---
