@@ -6,7 +6,7 @@
 
 ## Requirements:
 - apt-get update && apt-get upgrade -y         
-- apt-get install apache2 dpkg-dev libncurses5-dev libldap2-dev libpam0g-dev libdb-dev cdbs libsasl2-dev debhelper libcppunit-dev libkrb5-dev comerr-dev libcap2-dev libecap3-dev libexpat1-dev libxml2-dev autotools-dev libltdl-dev pkg-config libnetfilter-conntrack-dev nettle-dev libgnutls28-dev apt-utils bison build-essential cmake binutils autoconf automake grep wget net-tools g++ git vim gawk perl software-properties-common devscripts equivs bison flex firewalld -y        
+- apt-get install openssh-server apache2 dpkg-dev libncurses5-dev libldap2-dev libpam0g-dev libdb-dev cdbs libsasl2-dev debhelper libcppunit-dev libkrb5-dev comerr-dev libcap2-dev libecap3-dev libexpat1-dev libxml2-dev autotools-dev libltdl-dev pkg-config libnetfilter-conntrack-dev nettle-dev libgnutls28-dev apt-utils bison build-essential cmake binutils autoconf automake grep wget net-tools g++ git vim gawk perl software-properties-common devscripts equivs bison flex firewalld -y        
 
 ---
 
@@ -59,11 +59,6 @@ If curl does not display any error and the index.html file was downloaded to the
 
 ---
 
-## SquidGuard Install Steps:
-- apt-get install squidGuard
-
----
-
 ## MariaDB Install Steps:        
 - apt-get install mariadb-server -y       
 - service mysql restart; mysql_secure_installation       
@@ -74,7 +69,7 @@ The next prompt asks you whether you’d like to set up a database root password
 
 From there, you can press Y and then ENTER to accept the defaults for all the subsequent questions. This will remove some anonymous users and the test database, disable remote root logins, and load these new rules so that MariaDB immediately implements the changes you have made.      
 
-- mariadb
+- mariadb -u root -p
 
 ### Query Code is in the [MariaDB folder.](https://github.com/peyton-brown/Squid_Proxy-MariaDB-PHP-Configuration/blob/main/MariaDB/MariaDB_Queries.sql)
 
