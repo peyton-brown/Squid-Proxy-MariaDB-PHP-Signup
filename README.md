@@ -1,6 +1,6 @@
 # Squid Config Files
 
-## Squid Proxy & MySQL DB (Feb. & Mar. 2021)
+## Squid Proxy & MySQL Database
 
 ---
 
