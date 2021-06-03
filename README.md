@@ -50,13 +50,7 @@ To verify that the proxy works correctly, download a web page using the curl uti
 
 If curl does not display any error and the index.html file was downloaded to the current directory, the proxy works.       
 
-[Squid Wiki](https://wiki.squid-cache.org/SquidFaq/InstallingSquid)
-
-
-[Red Hat Documentation](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/networking_guide/configuring-the-squid-caching-proxy-server)
-
-
-[Useful Blog Site](http://jitenjha.blogspot.com/2014/01/configure-squid-proxy-server.html)
+[Squid Wiki](https://wiki.squid-cache.org/SquidFaq/InstallingSquid) || [Red Hat Documentation](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/networking_guide/configuring-the-squid-caching-proxy-server) || [Useful Blog Site](http://jitenjha.blogspot.com/2014/01/configure-squid-proxy-server.html)
 
 ---
 
