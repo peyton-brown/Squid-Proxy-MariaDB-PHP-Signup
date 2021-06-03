@@ -1,6 +1,4 @@
-# Squid Config Files
-
-## Squid Proxy & MySQL Database
+# Squid Proxy + MySQL Database + PHP Front-End
 
 ---
 
