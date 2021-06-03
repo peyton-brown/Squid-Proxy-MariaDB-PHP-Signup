@@ -75,6 +75,11 @@ From there, you can press Y and then ENTER to accept the defaults for all the su
 
 ---
 
+## PHP Install Steps:
+- apt-get install php libapache2-mod-php php-mysql
+
+---
+
 ## Connect to Proxy with FireFox:
 
 - On Firefox, go to options   
