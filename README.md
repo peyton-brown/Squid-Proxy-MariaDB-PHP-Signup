@@ -1,4 +1,4 @@
-# Squid Proxy + MySQL Database + PHP Front-End
+# Squid Proxy + Maria Database + PHP Front-End
 
 ---
 
