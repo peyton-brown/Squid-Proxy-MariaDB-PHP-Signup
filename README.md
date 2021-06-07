@@ -63,7 +63,7 @@ If curl does not display any error and the index.html file was downloaded to the
 ---
 
 ## MariaDB Install Steps:        
-- apt-get install mariadb-server -y       
+- apt-get install mariadb-server mariadb-client -y       
 - service mysql restart; mysql_secure_installation       
 
 This will take you through a series of prompts where you can make some changes to your MariaDB installation’s security options. The first prompt will ask you to enter the current database root password. Since you have not set one up yet, press ENTER to indicate “none”.       
