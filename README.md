@@ -81,7 +81,9 @@ To verify Apache was installed correctly, open a web browser and type in the add
 - http://192.168.0.0            
 
 Replace 192.168.0.0 with the IP address of your server. If you are unsure what your IP address is, run the following command:       
-- hostname -I | awk '{print $1}'     
+- hostname -I | awk '{print $1}'
+OR 
+- ifconfig    
 
 ---
 
