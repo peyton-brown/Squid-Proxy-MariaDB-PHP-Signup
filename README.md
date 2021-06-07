@@ -22,12 +22,15 @@
 - git clone https://github.com/peyton-brown/Squid_Proxy-MariaDB-PHP-Configuration.git; cd Squid_Proxy-MariaDB-PHP-Configuration             
 - cp /git/Squid_Proxy-MariaDB-PHP-Configuration/squid.conf /etc/squid/          
 - cp /git/Squid_Proxy-MariaDB-PHP-Configuration/Whitelist/allowed_sites.txt /etc/squid/      
-- cp /git/Squid_Proxy-MariaDB-PHP-Configuration/MariaDB/basic_db_auth/ /usr/lib/squid       
+- cp /git/Squid_Proxy-MariaDB-PHP-Configuration/MariaDB/basic_db_auth /usr/lib/squid/       
 
 ### Change the Whitelist to your needs.
-- vim /etc/squid/allowed_sites.txt
+- vim /etc/squid/allowed_sites.txt         
 
-### Edit the http_port to your ip in squid.conf (/etc/squid/):        
+### Edit the "my $dsn" to your ip in basic_db_auth (/usr/lib/squid/basic_db_auth):    
+- my $dsn = "DBI:mysql:database=squid;host=ipv4";
+
+### Edit the "http_port to your ip in squid.conf (/etc/squid/squid.conf):        
 - http_port ipv4:3128       
 
 ### Open the 3128 port in the firewall:
@@ -39,21 +42,21 @@
 Create swap directories using -z.     
 - squid -z          
 
-Start the squid service:
-- systemctl start squid    
+Start the squid service:         
+- systemctl start squid     
 
-Enable the squid service to start automatically when the system boots:
-- systemctl enable squid
+Enable the squid service to start automatically when the system boots:       
+- systemctl enable squid        
 
-Check if squid is running:       
-- ps -e | grep squid      
-- systemctl status squid     
+Check if squid is running:        
+- ps -e | grep squid       
+- systemctl status squid       
 
 ### Verification Steps
-To verify that the proxy works correctly, download a web page using the curl utility:       
--  curl -O -L "https://www.redhat.com/index.html" -x "ipv4:3128"
+To verify that the proxy works correctly, download a web page using the curl utility:        
+-  curl -O -L "https://www.redhat.com/index.html" -x "ipv4:3128"        
 
-If curl does not display any error and the index.html file was downloaded to the current directory, the proxy works.       
+If curl does not display any error and the index.html file was downloaded to the current directory, the proxy works.        
 
 [Squid Wiki](https://wiki.squid-cache.org/SquidFaq/InstallingSquid) || [Red Hat Documentation](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/networking_guide/configuring-the-squid-caching-proxy-server) || [Useful Blog Site](http://jitenjha.blogspot.com/2014/01/configure-squid-proxy-server.html)
 
