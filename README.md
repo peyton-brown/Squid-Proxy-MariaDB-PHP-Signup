@@ -78,7 +78,7 @@ From there, you can press Y and then ENTER to accept the defaults for all the su
 
 ---
 
-## Apache2 Install Steps:
+## PHP/Apache2 Install Steps:
 - apt-get install apache2 -y; ufw allow 'Apache Full'; ufw enable; ufw status       
 
 ### Verify Apache Installation
