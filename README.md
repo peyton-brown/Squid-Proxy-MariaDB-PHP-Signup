@@ -76,15 +76,19 @@ From there, you can press Y and then ENTER to accept the defaults for all the su
 ## PHP Install Steps:
 - apt-get install php libapache2-mod-php php-mysql -y       
 
+---
+
 ### Install Apache
 - apt-get install apache2 -y; ufw allow 'Apache Full'; ufw enable; ufw status       
 
 ### Verify Apache Installation
 To verify Apache was installed correctly, open a web browser and type in the address bar:       
-- http://ipv4            
+- http://192.168.0.0            
 
-Replace ipv4 with the IP address of your server. If you are unsure what’s the IP address, run the following terminal command:       
-- hostname -I | awk '{print $1}'        
+Replace 192.168.0.0 with the IP address of your server. If you are unsure what your IP address is, run the following command:       
+- hostname -I | awk '{print $1}'     
+
+---
 
 ---
 
