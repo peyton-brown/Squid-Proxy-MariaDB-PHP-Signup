@@ -3,6 +3,11 @@
 ---
 
 ## Requirements:
+
+### Change Root Password
+- sudo passwd root
+
+### Update & Install Dependencies
 - apt-get update && apt-get upgrade -y         
 - apt-get install openssh-server dpkg-dev libncurses5-dev libldap2-dev libpam0g-dev libdb-dev cdbs libsasl2-dev debhelper libcppunit-dev libkrb5-dev comerr-dev libcap2-dev libecap3-dev libexpat1-dev libxml2-dev autotools-dev libltdl-dev pkg-config libnetfilter-conntrack-dev nettle-dev libgnutls28-dev apt-utils bison build-essential cmake binutils autoconf automake grep wget net-tools g++ git vim gawk perl software-properties-common devscripts equivs bison flex -y        
 
