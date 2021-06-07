@@ -6,6 +6,7 @@
 
 ### Change Root Password
 - sudo passwd root
+- su -
 
 ### Update & Install Dependencies
 - apt-get update && apt-get upgrade -y         
