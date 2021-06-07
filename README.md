@@ -67,17 +67,23 @@ The next prompt asks you whether you’d like to set up a database root password
 
 From there, you can press Y and then ENTER to accept the defaults for all the subsequent questions. This will remove some anonymous users and the test database, disable remote root logins, and load these new rules so that MariaDB immediately implements the changes you have made.      
 
-- mariadb -u root -p
+- mariadb -u root -p      
 
 ### Query Code is in the [MariaDB folder.](https://github.com/peyton-brown/Squid_Proxy-MariaDB-PHP-Configuration/blob/main/MariaDB/MariaDB_Queries.sql)
 
 ---
 
 ## PHP Install Steps:
-- apt-get install php libapache2-mod-php php-mysql -y
+- apt-get install php libapache2-mod-php php-mysql -y       
 
 ### Install Apache
-- apt-get install apache2 -y; ufw allow 'Apache Full'; ufw enable; ufw status
+- apt-get install apache2 -y; ufw allow 'Apache Full'; ufw enable; ufw status       
+
+#### Verify Apache Installation
+To verify Apache was installed correctly, open a web browser and type in the address bar:       
+- http://ipv4
+Replace ipv4 with the IP address of your server. If you are unsure what’s the IP address, run the following terminal command:       
+- hostname -I | awk '{print $1}'
 
 ---
 
