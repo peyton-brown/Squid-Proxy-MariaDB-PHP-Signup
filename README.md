@@ -79,7 +79,7 @@ From there, you can press Y and then ENTER to accept the defaults for all the su
 ---
 
 ## PHP/Apache2 Install Steps:
-- apt-get install apache2 -y; ufw allow 'Apache Full'; ufw enable; ufw status       
+- apt-get install apache2 php libapache2-mod-php php-mysql -y; ufw allow 'Apache Full'; ufw enable; ufw status       
 
 ### Verify Apache Installation
 To verify Apache was installed correctly, open a web browser and type in the address bar:       
@@ -89,7 +89,10 @@ Replace 192.168.0.0 with the IP address of your server. If you are unsure what y
 - hostname -I | awk '{print $1}'     
 
 #### Copy Website to Apache folder:
-- cp /git/Squid_Proxy-MariaDB-PHP-Configuration/PHP-Signup-Website/* /var/www/html; rm -rf /var/www/html/index.html            
+- cp -r /git/Squid_Proxy-MariaDB-PHP-Configuration/PHP-Signup-Website/* /var/www/html; rm -rf /var/www/html/index.html            
+
+### Restart Apache
+- systemctl restart apache2
 
 ### NOTE: This method only works on a local network unless you port forward. If you want to setup multiple websites on the same server use the Linuxize source or [click here](https://linuxize.com/post/how-to-install-apache-on-ubuntu-20-04/#setting-up-a-virtual-host).
 
