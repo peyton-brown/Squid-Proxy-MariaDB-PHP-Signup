@@ -82,6 +82,7 @@ From there, you can press Y and then ENTER to accept the defaults for all the su
 #### Verify Apache Installation
 To verify Apache was installed correctly, open a web browser and type in the address bar:       
 - http://ipv4            
+
 Replace ipv4 with the IP address of your server. If you are unsure what’s the IP address, run the following terminal command:       
 - hostname -I | awk '{print $1}'        
 
