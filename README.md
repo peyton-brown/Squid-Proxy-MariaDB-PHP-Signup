@@ -80,10 +80,12 @@ From there, you can press Y and then ENTER to accept the defaults for all the su
 To verify Apache was installed correctly, open a web browser and type in the address bar:       
 - http://192.168.0.0            
 
-Replace 192.168.0.0 with the IP address of your server. If you are unsure what your IP address is, run the following command:       
-- hostname -I | awk '{print $1}'        
-OR            
-- ifconfig        
+Replace 192.168.0.0 with the IP address of your server. If you are unsure what your IP address is, run the following command(s):       
+- hostname -I | awk '{print $1}'     
+
+### NOTE: This method only works on local network unless you port-forward. If you want to setup multiple websites on the same server use the Linuxize source or [click here](https://linuxize.com/post/how-to-install-apache-on-ubuntu-20-04/#setting-up-a-virtual-host):
+
+[Phoenixnap Apache Installation Steps](https://phoenixnap.com/kb/how-to-install-apache-web-server-on-ubuntu-18-04) || [Linuxize](https://linuxize.com/post/how-to-install-apache-on-ubuntu-20-04/)
 
 ---
 
