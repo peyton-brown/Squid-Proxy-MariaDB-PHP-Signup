@@ -79,7 +79,7 @@ From there, you can press Y and then ENTER to accept the defaults for all the su
 ---
 
 ## PHP/Apache2 Install Steps:
-- apt-get install apache2 php libapache2-mod-php php-mysql -y; ufw allow 'Apache Full'; ufw enable; ufw status       
+- apt-get install apache2 php php-cgi libapache2-mod-php php-common php-pear php-mbstring php-mysql -y; ufw allow 'Apache Full'; ufw enable; ufw status       
 
 ### Verify Apache Installation
 To verify Apache was installed correctly, open a web browser and type in the address bar:       
