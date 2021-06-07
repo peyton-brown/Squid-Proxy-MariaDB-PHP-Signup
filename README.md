@@ -22,7 +22,7 @@
 - git clone https://github.com/peyton-brown/Squid_Proxy-MariaDB-PHP-Configuration.git; cd Squid_Proxy-MariaDB-PHP-Configuration             
 - cp /git/Squid_Proxy-MariaDB-PHP-Configuration/squid.conf /etc/squid/          
 - cp /git/Squid_Proxy-MariaDB-PHP-Configuration/Whitelist/allowed_sites.txt /etc/squid/      
-- cp /git/Squid_Proxy-MariaDB-PHP-Configuration/MariaDB/basic_db_auth/        
+- cp /git/Squid_Proxy-MariaDB-PHP-Configuration/MariaDB/basic_db_auth/ /usr/lib/squid       
 
 ### Change the Whitelist to your needs.
 - vim /etc/squid/allowed_sites.txt
