@@ -24,7 +24,8 @@
 - cp /git/Squid_Proxy-MariaDB-PHP-Configuration/Whitelist/allowed_sites.txt /etc/squid/           
 - cp /git/Squid_Proxy-MariaDB-PHP-Configuration/PHP-Signup-Website/* /var/www/html; rm -rf /var/www/html/index.html            
 
-
+### Change the Whitelist to your needs.
+- vim /etc/squid/allowed_sites.txt
 
 ### Edit the http_port to your ip in squid.conf (/etc/squid/):        
 - http_port ipv4:3128       
