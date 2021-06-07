@@ -21,8 +21,8 @@
 - mkdir /git; cd /git/       
 - git clone https://github.com/peyton-brown/Squid_Proxy-MariaDB-PHP-Configuration.git; cd Squid_Proxy-MariaDB-PHP-Configuration             
 - cp /git/Squid_Proxy-MariaDB-PHP-Configuration/squid.conf /etc/squid/          
-- cp /git/Squid_Proxy-MariaDB-PHP-Configuration/Whitelist/allowed_sites.txt /etc/squid/           
-- cp /git/Squid_Proxy-MariaDB-PHP-Configuration/PHP-Signup-Website/* /var/www/html; rm -rf /var/www/html/index.html            
+- cp /git/Squid_Proxy-MariaDB-PHP-Configuration/Whitelist/allowed_sites.txt /etc/squid/      
+- cp /git/Squid_Proxy-MariaDB-PHP-Configuration/MariaDB/basic_db_auth/        
 
 ### Change the Whitelist to your needs.
 - vim /etc/squid/allowed_sites.txt
@@ -84,6 +84,9 @@ To verify Apache was installed correctly, open a web browser and type in the add
 
 Replace 192.168.0.0 with the IP address of your server. If you are unsure what your IP address is, run the following command(s):       
 - hostname -I | awk '{print $1}'     
+
+Copy Website to Apache folders:
+- cp /git/Squid_Proxy-MariaDB-PHP-Configuration/PHP-Signup-Website/* /var/www/html; rm -rf /var/www/html/index.html            
 
 ### NOTE: This method only works on a local network unless you port forward. If you want to setup multiple websites on the same server use the Linuxize source or [click here](https://linuxize.com/post/how-to-install-apache-on-ubuntu-20-04/#setting-up-a-virtual-host).
 
