@@ -79,7 +79,7 @@ From there, you can press Y and then ENTER to accept the defaults for all the su
 ### Install Apache
 - apt-get install apache2 -y; ufw allow 'Apache Full'; ufw enable; ufw status       
 
-#### Verify Apache Installation
+### Verify Apache Installation
 To verify Apache was installed correctly, open a web browser and type in the address bar:       
 - http://ipv4            
 
