@@ -7,3 +7,5 @@ CREATE TABLE passwd (
 );
 
 INSERT INTO passwd VALUES('testUser','testPWD');
+
+quit;
