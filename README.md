@@ -63,7 +63,7 @@ If curl does not display any error and the index.html file was downloaded to the
 ---
 
 ## MariaDB Install Steps:        
-- apt-get install mariadb-server mariadb-client -y; service mysql restart        
+- apt-get install mariadb-server mariadb-client -y; service mysql restart; mysql_secure_installation        
 
 First run MariaDB as root.
 - mariadb -u root -p -h localhost      
