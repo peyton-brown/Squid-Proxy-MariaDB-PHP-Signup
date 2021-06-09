@@ -68,9 +68,8 @@ If curl does not display any error and the index.html file was downloaded to the
 First run MariaDB as root.
 - mariadb -u root -p -h localhost      
 
-Run the first set of query code [(located in make-user.sql file)](https://github.com/peyton-brown/Squid_Proxy-MariaDB-PHP-Configuration/blob/main/MariaDB/make-user.sql).
+Run the first set of query code [(located in make-user.sql file)](https://github.com/peyton-brown/Squid_Proxy-MariaDB-PHP-Configuration/blob/main/MariaDB/make-user.sql). After running the first set of query code, move onto the squidUser user.
 
-After running the first set of query code, move onto the squidUser user.
 - mariadb -u squidUser -p -h localhost
 
 Run the second set of query code [(located in make-db.sql file)](https://github.com/peyton-brown/Squid_Proxy-MariaDB-PHP-Configuration/blob/main/MariaDB/make-db.sql).
