@@ -5,8 +5,8 @@ if (isset($_POST["submit"])) {
   $userName = htmlspecialchars($_POST["username"]);
   $password = htmlspecialchars($_POST["password"]);
 
-  require_once 'dbconnection.php';
-  require_once 'functions-include.php';
+  include('dbconnection.php');
+  include('functions-include.php');
 
   if (emptyEntrie($userName, $password) !== false) {
     header('location: ../signup.php?error=emptyEntrie');
@@ -15,11 +15,6 @@ if (isset($_POST["submit"])) {
 
   if (invalidUserName($userName) !== false) {
     header('location: ../signup.php?error=invalidUserName');
-    exit();
-  }
-
-  if (userNameExists($conn, $userName) !== false) {
-    header('location: ../signup.php?error=usernameIsTaken');
     exit();
   }
 
