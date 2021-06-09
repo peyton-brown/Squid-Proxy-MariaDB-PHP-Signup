@@ -72,7 +72,7 @@ Run the first set of query code [(located in make-user.sql file)](https://github
 
 - mariadb -u squidUser -p -h localhost
 
-Run the second set of query code [(located in make-db.sql file)](https://github.com/peyton-brown/Squid_Proxy-MariaDB-PHP-Configuration/blob/main/MariaDB/make-db.sql).
+Run the second set of query code [(located in make-db.sql file)](https://github.com/peyton-brown/Squid_Proxy-MariaDB-PHP-Configuration/blob/main/MariaDB/make-db.sql) and exit MariaDB.
 
 ---
 
