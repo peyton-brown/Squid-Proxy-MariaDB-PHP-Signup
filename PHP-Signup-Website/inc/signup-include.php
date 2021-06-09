@@ -5,7 +5,7 @@ if (isset($_POST["submit"])) {
   $userName = htmlspecialchars($_POST["username"]);
   $password = htmlspecialchars($_POST["password"]);
 
-  require_once 'db_handler-include.php';
+  require_once 'dbconnection.php';
   require_once 'functions-include.php';
 
   if (emptyEntrie($userName, $password) !== false) {
