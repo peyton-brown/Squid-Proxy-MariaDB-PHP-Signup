@@ -65,13 +65,15 @@ If curl does not display any error and the index.html file was downloaded to the
 ## MariaDB Install Steps:        
 - apt-get install mariadb-server mariadb-client -y; service mysql restart        
 
+First run MariaDB as root.
 - mariadb -u root -p -h localhost      
 
-### Run the first set of query code [(located in make-user.sql file)](https://github.com/peyton-brown/Squid_Proxy-MariaDB-PHP-Configuration/blob/main/MariaDB/make-user.sql). Once every command has been ran, move on to the next line.
+Run the first set of query code [(located in make-user.sql file)](https://github.com/peyton-brown/Squid_Proxy-MariaDB-PHP-Configuration/blob/main/MariaDB/make-user.sql).
 
+After running the first set of query code, move onto the squidUser user.
 - mariadb -u squidUser -p -h localhost
 
-### Run the second set of query code [(located in make-db.sql file)](https://github.com/peyton-brown/Squid_Proxy-MariaDB-PHP-Configuration/blob/main/MariaDB/make-db.sql).
+Run the second set of query code [(located in make-db.sql file)](https://github.com/peyton-brown/Squid_Proxy-MariaDB-PHP-Configuration/blob/main/MariaDB/make-db.sql).
 
 ---
 
