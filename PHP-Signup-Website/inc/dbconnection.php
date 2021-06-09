@@ -1,14 +1,16 @@
 <?php
 
-$serverName = "localhost";
-$dbUsername = "squidUser";
-$dbPassword = "squidPassword";
-$dbName = "squid";
+$server="localhost";
+$username="squidUser";
+$password="squidPassword";
+$database = "squid";
 
-$conn = mysqli_connect($serverName, $dbUsername, $dbPassword, $dbName);
+$connect=new mysqli($servername,$username,$password,$database);
 
-if (!$conn) {
-  die("MariaDB failed: " . mysqli_connect_error());
-}
+/* Check the connection is created properly or not */
+if($connect->connect_error)
+    echo "Connection error:" .$connect->connect_error;
+else
+    echo "Connection is created successfully";
 
 ?>
