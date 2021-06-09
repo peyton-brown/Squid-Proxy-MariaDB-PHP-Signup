@@ -1,8 +1,8 @@
 <?php
 
 $serverName = "localhost";
-$dbUsername = "root";
-$dbPassword = "";
+$dbUsername = "squidUser";
+$dbPassword = "password";
 $dbName = "squid";
 
 $conn = mysqli_connect($serverName, $dbUsername, $dbPassword, $dbName);
