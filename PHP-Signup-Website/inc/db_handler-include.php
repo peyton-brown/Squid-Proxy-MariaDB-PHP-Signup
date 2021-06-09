@@ -7,8 +7,9 @@ $dbName = "squid";
 
 $conn = mysqli_connect($serverName, $dbUsername, $dbPassword, $dbName);
 
-if (!$conn) {
-  die("MySQLi failed: " . mysqli_connect_error());
-}
+if($conn->connect_error)
+    echo "Connection error:" .$conn->connect_error;
+else
+    echo "Connection is created successfully";
 
 ?>
