@@ -85,7 +85,7 @@ From there, you can ***press Y and then ENTER to accept the defaults for all the
 To verify Apache was installed correctly, open a web browser and type in the address bar:       
 - http://192.168.0.0            
 
-Replace 192.168.0.0 with the IP address of your server. If you are unsure what your IP address is, run the following command(s):       
+Replace 192.168.0.0 with the IP address of your server. If you are unsure what your IP address is, run the following command:       
 - hostname -I | awk '{print $1}'     
 
 #### Copy Website to Apache folder:
