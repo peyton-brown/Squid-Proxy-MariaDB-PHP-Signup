@@ -30,7 +30,7 @@ function invalidUserName($userName) {
 }
 
 
-function userNameExists($conn, $username) {
+function userNameExists($conn, $userName) {
   $sql = "SELECT * FROM passwd WHERE user = ?;";
   $stmt = mysqli_stmt_init($conn);
 
@@ -58,11 +58,8 @@ function userNameExists($conn, $username) {
   mysqli_stmt_close($stmt);
 }
 
-
-
-
-function createUser($conn, $firstName, $lastName, $email, $username, $password) {
-  $sql = "INSERT INTO users (firstName, lastName, userEmail, userUserName, userPassword) VALUES (?, ?, ?, ?, ?);";
+function createUser($conn, $username, $password) {
+  $sql = "INSERT INTO users (user, password) VALUES (?, ?);";
   $stmt = mysqli_stmt_init($conn);
 
   // if stmt failes, send user back with an error
@@ -74,7 +71,7 @@ function createUser($conn, $firstName, $lastName, $email, $username, $password) 
   // Makes a hashed password.
   $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
-  mysqli_stmt_bind_param($stmt, "sssss", $firstName, $lastName, $email, $username, $hashedPassword);
+  mysqli_stmt_bind_param($stmt, "ss",$username, $hashedPassword);
   mysqli_stmt_execute($stmt);
   mysqli_stmt_close($stmt);
 
