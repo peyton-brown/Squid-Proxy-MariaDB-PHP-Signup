@@ -115,16 +115,3 @@ Replace 192.168.0.0 with the IP address of your server. If you are unsure what y
 - Click OK   
 
 ---
-
-## Connect to Proxy with Chromium Browsers:
-
-- On Firefox, go to options   
-- Network Settings   
-- Manual proxy configuration   
-- Go to your Ubuntu Server and type in 'ifconfig'   
-- Find the inet address (ip address)   
-- Go back to Firefox   
-- Enter that ip into HTTP Proxy   
-- Check 'Also use this proxy for FTP and HTTPS'   
-- Make sure the port is the same as the one in squid.conf   
-- Click OK   
