@@ -62,7 +62,7 @@ If curl does not display any error and the index.html file was downloaded to the
 
 ---
 
-## MariaDB Install Steps:        
+## MariaDB Install Steps | READ ENTIRE SECTION BEFORE RUNNING:        
 - apt-get install mariadb-server mariadb-client -y; service mysql restart; mysql_secure_installation      
 
 The first prompt will ask you to enter the current database root password. Since you have not set one up yet, ***press ENTER to indicate “none”***.
@@ -74,7 +74,7 @@ From there, you can ***press Y and then ENTER to accept the defaults for all the
 First run MariaDB as root.
 - mariadb -u root -p -h localhost      
 
-Run the first set of query code [(located in make-user.sql file)](https://github.com/peyton-brown/Squid_Proxy-MariaDB-PHP-Configuration/blob/main/MariaDB/make-user.sql). After running the first set of query code, move onto the squidUser user.
+Run the first set of query code [(located in make-user.sql file)](https://github.com/peyton-brown/Squid_Proxy-MariaDB-PHP-Configuration/blob/main/MariaDB/make-user.sql). After running the first set of query code, move onto the squidUser user. The password for the squidUser is ***squidPassword***. This will have to be changed in the make-user.sql file before running.
 
 - mariadb -u squidUser -p -h localhost
 
