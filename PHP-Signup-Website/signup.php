@@ -17,6 +17,7 @@
       </div>
     </form>
   </section>
+
 <!-- Footer -->
 <?php
   include_once 'templates/footer.php'
