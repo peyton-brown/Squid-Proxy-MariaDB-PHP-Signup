@@ -28,8 +28,6 @@
           echo "<p class=\"errorMsg\">The password you entered does not match.</p>";
         } elseif ($_GET['error'] == 'userNameExists') {
           echo "<p class=\"errorMsg\">Username is already taken.</p>";
-        } elseif ($_GET['error'] == 'stmtFailed') {
-          echo "<p class=\"errorMsg\">Error Occurred, try again. (error: stmt failed)</p>";
         } elseif ($_GET['error'] == 'successfullySignedUp'){
           echo "<p class=\"errorMsg\">Successfully Signed Up.</p>";
         }

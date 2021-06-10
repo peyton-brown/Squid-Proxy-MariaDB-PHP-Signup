@@ -30,7 +30,7 @@ function invalidUserName($userName) {
 }
 
 function createUser($conn, $userName, $password) {
-  $sql = "INSERT INTO passwd(user, password) VALUES (?, ?);";
+  $sql = "INSERT INTO passwd(user, password) VALUES ($userName, $password);";
   $result = mysqli_query($conn, $sql)
 
   header('location: ../signup.php?=successfullySignedUp');
