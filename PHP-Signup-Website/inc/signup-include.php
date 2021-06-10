@@ -1,29 +1,15 @@
 <?php
 
-if (isset($_POST["submit"])) {
-  // Global variables
-  $userName = htmlspecialchars($_POST["username"]);
-  $password = htmlspecialchars($_POST["password"]);
+include_once 'dbconnection.php';
 
-  include('dbconnection.php');
-  include('functions-include.php');
+$uid = $_POST['uid'];
+$pwd = $_POST['pwd'];
 
-  if (emptyEntrie($userName, $password) !== false) {
-    header('location: ../signup.php?error=emptyEntrie');
-    exit();
-  }
+$sql = "INSERT INTO passwd (user, password) VALUES ('$uid', '$pwd');";
+$result = mysqli_query($conn, $sql)
 
-  if (invalidUserName($userName) !== false) {
-    header('location: ../signup.php?error=invalidUserName');
-    exit();
-  }
-
-  createUser($conn, $userName, $password);
-}
-else {
-  header('location: ../signup.php');
-  exit();
-}
+header('location: ../signup.php?signup=success');
+exit();
 
 
 ?>
