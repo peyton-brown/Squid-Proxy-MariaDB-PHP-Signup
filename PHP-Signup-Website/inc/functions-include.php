@@ -29,24 +29,11 @@ function invalidUserName($userName) {
   return $result;
 }
 
-function createUser($conn, $username, $password) {
+function createUser($conn, $userName, $password) {
   $sql = "INSERT INTO passwd(user, password) VALUES (?, ?);";
-  $stmt = mysqli_stmt_init($conn);
+  $result = mysqli_query($conn, $sql)
 
-  // if stmt failes, send user back with an error
-  if (!mysqli_stmt_prepare($stmt, $sql)) {
-    header('location: ../signup.php?error=stmtFailed');
-    exit();
-  }
-
-  // Makes a hashed password.
-  $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
-
-  mysqli_stmt_bind_param($stmt, "ss", $username, $hashedPassword);
-  mysqli_stmt_execute($stmt);
-  mysqli_stmt_close($stmt);
-
-  header('location: ../signup.php?error=successfullySignedUp');
+  header('location: ../signup.php?=successfullySignedUp');
   exit();
 }
 

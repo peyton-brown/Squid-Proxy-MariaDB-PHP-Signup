@@ -1,11 +1,11 @@
 <?php
 
-$server="localhost";
-$username="squidUser";
-$password="squidPassword";
-$database = "squid";
+$dbServerName="localhost";
+$dbUsername="squidUser";
+$dbPassword="squidPassword";
+$dbName = "squid";
 
-$conn = mysqli_connect($servername, $username, $password, $database);
+$conn = mysqli_connect($dbServerName, $dbUsername, $dbPassword, $dbName);
 
 /* Check the connection is created properly or not */
 if(!$conn){
