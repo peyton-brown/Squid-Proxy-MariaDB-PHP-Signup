@@ -8,8 +8,6 @@ $pwd = $_POST['pwd'];
 $sql = "INSERT INTO passwd (user, password) VALUES ('$uid', '$pwd');";
 $result = mysqli_query($conn, $sql)
 
-header('location: ../signup.php?signup=success');
-exit();
-
+header('location: ../index.php?signup=success');
 
 ?>
