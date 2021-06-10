@@ -63,7 +63,13 @@ If curl does not display any error and the index.html file was downloaded to the
 ---
 
 ## MariaDB Install Steps:        
-- apt-get install mariadb-server mariadb-client -y; service mysql restart; mysql_secure_installation        
+- apt-get install mariadb-server mariadb-client -y; service mysql restart; mysql_secure_installation      
+
+The first prompt will ask you to enter the current database root password. Since you have not set one up yet, ***press ENTER to indicate “none”***.
+
+The next prompt asks you whether you’d like to set up a database root password. This will be used later in the [PHP section](https://github.com/peyton-brown/Squid_Proxy-MariaDB-PHP-Configuration#phpapache2-install-steps). ***Type Y and then press ENTER. REMEMBER YOUR PASSWORD***.
+
+From there, you can ***press Y and then ENTER to accept the defaults for all the subsequent questions***. This will remove some anonymous users and the test database, disable remote root logins, and load these new rules so that MariaDB immediately implements the changes you have made.  
 
 First run MariaDB as root.
 - mariadb -u root -p -h localhost      
