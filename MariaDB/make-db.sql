@@ -1,3 +1,7 @@
+CREATE DATABASE squid;
+
+GRANT SELECT ON squid.* to dataproxy@localhost identified by 'dataproxy';
+
 USE squid;
 
 CREATE TABLE passwd (
