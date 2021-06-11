@@ -1,7 +1,7 @@
-CREATE USER 'squidUser'@'localhost' IDENTIFIED BY 'squidPassword';
+CREATE USER 'dataproxy'@'localhost' IDENTIFIED BY 'dataproxy';
 
 CREATE DATABASE squid;
 
-GRANT ALL PRIVILEGES ON squid.* TO 'squidUser'@'localhost';
+GRANT ALL PRIVILEGES ON squid.* TO 'dataproxy'@'localhost';
 
 quit;
