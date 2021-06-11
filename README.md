@@ -22,19 +22,15 @@
 - git clone https://github.com/peyton-brown/Squid_Proxy-MariaDB-PHP-Configuration.git; cd Squid_Proxy-MariaDB-PHP-Configuration             
 - cp /git/Squid_Proxy-MariaDB-PHP-Configuration/squid.conf /etc/squid/          
 - cp /git/Squid_Proxy-MariaDB-PHP-Configuration/Whitelist/allowed_sites.txt /etc/squid/      
-- cp /git/Squid_Proxy-MariaDB-PHP-Configuration/MariaDB/basic_db_auth /usr/lib/squid/       
 
 ### Change the Whitelist to your needs.
 - vim /etc/squid/allowed_sites.txt         
-
-### Edit the "my $dsn" to your ip in basic_db_auth (/usr/lib/squid/basic_db_auth):    
-- my $dsn = "DBI:mysql:database=squid;host=ipv4";
 
 ### Edit the "http_port to your ip in squid.conf (/etc/squid/squid.conf):        
 - http_port ipv4:3128       
 
 ### Open the 3128 port in the firewall:
-- ufw allow in "Squid"        
+- ufw allow in "Squid"; firewall-cmd --permanent --add-port=3128/tcp; firewall-cmd --reload         
 
 ### Starting Squid:  
 - systemctl stop squid        
@@ -48,8 +44,7 @@ Start the squid service:
 Enable the squid service to start automatically when the system boots:       
 - systemctl enable squid        
 
-Check if squid is running:        
-- ps -e | grep squid       
+Check if squid is running:       
 - systemctl status squid       
 
 ### Verification Steps
