@@ -11,8 +11,10 @@ CREATE TABLE passwd (
     PRIMARY KEY (user)
 );
 
-INSERT INTO passwd VALUES('testUser','testPWD');
+INSERT INTO passwd VALUES('testUser','testPWD',1);
 
 SHOW TABLES;
 
 SELECT * FROM passwd;
+
+quit
