@@ -69,7 +69,8 @@ From there, you can ***press Y and then ENTER to accept the defaults for all the
 First run MariaDB as root.
 - mariadb -u root -p -h localhost      
 
-Run the query code [(located in make-db.sql file)](https://github.com/peyton-brown/Squid_Proxy-MariaDB-PHP-Configuration/blob/main/MariaDB/make-db.sql). 
+Run the query code [(located in make-db.sql file)](https://github.com/peyton-brown/Squid_Proxy-MariaDB-PHP-Configuration/blob/main/MariaDB/make-db.sql).
+
 ---
 
 ## PHP/Apache2 Install Steps:
