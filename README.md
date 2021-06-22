@@ -69,12 +69,7 @@ From there, you can ***press Y and then ENTER to accept the defaults for all the
 First run MariaDB as root.
 - mariadb -u root -p -h localhost      
 
-Run the first set of query code [(located in make-user.sql file)](https://github.com/peyton-brown/Squid_Proxy-MariaDB-PHP-Configuration/blob/main/MariaDB/make-user.sql). After running the first set of query code, move onto the dataproxy user. The password for the dataproxy is ***dataproxy***. This will have to be changed in the make-user.sql file, as well as, the squid.conf file before running.
-
-- mariadb -u dataproxy -p -h localhost
-
-Run the second set of query code [(located in make-db.sql file)](https://github.com/peyton-brown/Squid_Proxy-MariaDB-PHP-Configuration/blob/main/MariaDB/make-db.sql) and exit MariaDB.
-
+Run the query code [(located in make-db.sql file)](https://github.com/peyton-brown/Squid_Proxy-MariaDB-PHP-Configuration/blob/main/MariaDB/make-db.sql). 
 ---
 
 ## PHP/Apache2 Install Steps:
