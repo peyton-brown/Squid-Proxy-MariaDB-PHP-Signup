@@ -12,4 +12,6 @@ CREATE TABLE passwd (
 
 INSERT INTO passwd VALUES('testUser','testPWD');
 
-quit;
+SHOW TABLES;
+
+SELECT * FROM passwd;
