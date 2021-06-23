@@ -56,7 +56,7 @@ From there, you can ***press Y and then ENTER to accept the defaults for all the
 First run MariaDB as root.
 - mariadb -u root -p -h localhost      
 
-Run the query code [(located in make-db.sql file)](https://github.com/peyton-brown/Squid-Proxy-MariaDB-PHP-Signup/blob/main/MariaDB/make-db.sql).
+### Query Code is in the [MariaDB folder.](https://github.com/peyton-brown/Squid-Proxy-MariaDB-PHP-Signup/blob/main/MariaDB/make-db.sql)
 
 ---
 
