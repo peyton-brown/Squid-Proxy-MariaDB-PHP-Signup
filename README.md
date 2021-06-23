@@ -1,4 +1,4 @@
-# Squid Proxy + Maria Database + PHP Front-End
+# Squid Proxy + Maria Database + PHP Signup Website
 #### Ubuntu Server 20.04.2
 ---
 
@@ -44,7 +44,7 @@ Check if squid is running:
 
 ---
 
-## MariaDB Install Steps | READ ENTIRE SECTION BEFORE RUNNING:        
+## MariaDB Install Steps:     
 - apt-get install mariadb-server mariadb-client -y; service mysql restart; mysql_secure_installation      
 
 The first prompt will ask you to enter the current database root password. Since you have not set one up yet, ***press ENTER to indicate “none”***.
