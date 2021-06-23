@@ -19,7 +19,7 @@
 
 ### Git Clone Folder:
 - mkdir /git; cd /git/       
-- git clone https://github.com/peyton-brown/Squid-Proxy-MariaDB-PHP-Signup.git; cd Squid_Proxy-MariaDB-PHP-Configuration; cd /             
+- git clone https://github.com/peyton-brown/Squid-Proxy-MariaDB-PHP-Signup.git; cd /             
 - cp /git/Squid-Proxy-MariaDB-PHP-Signup/squid.conf /etc/squid/; cp /git/Squid-Proxy-MariaDB-PHP-Signup/Whitelist/allowed_sites.txt /etc/squid/      
 
 ### Change the Whitelist to your needs.
