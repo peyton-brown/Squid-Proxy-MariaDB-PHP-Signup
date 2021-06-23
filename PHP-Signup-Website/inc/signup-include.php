@@ -15,7 +15,7 @@
         $query = "INSERT INTO passwd(user,password) VALUES('$username','$password')";
         $result = mysqli_query($conn, $query);
         if(!$result){
-            die("Query failed".mysqli_error($conn));
+            die("Query failed ".mysqli_error($conn));
         }
     }
 
