@@ -1,6 +1,7 @@
 CREATE DATABASE squid;
 
-GRANT SELECT ON squid.* to squidUser@localhost identified by 'squidPassword';
+CREATE USER 'squidUser'@'localhost' identified by 'squidPassword';
+GRANT ALL PRIVILEGES ON squid.passwd to 'squidUser'@'localhost';
 
 USE squid;
 
