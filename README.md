@@ -19,7 +19,7 @@
 
 ### Git Clone Folder:
 - mkdir /git; cd /git/       
-- git clone https://github.com/peyton-brown/Squid_Proxy-MariaDB-PHP-Configuration.git; cd Squid_Proxy-MariaDB-PHP-Configuration             
+- git clone https://github.com/peyton-brown/Squid-Proxy-MariaDB-PHP-Signup.git; cd Squid_Proxy-MariaDB-PHP-Configuration             
 - cp /git/Squid_Proxy-MariaDB-PHP-Configuration/squid.conf /etc/squid/; cp /git/Squid_Proxy-MariaDB-PHP-Configuration/Whitelist/allowed_sites.txt /etc/squid/      
 
 ### Change the Whitelist to your needs.
@@ -49,14 +49,14 @@ Check if squid is running:
 
 The first prompt will ask you to enter the current database root password. Since you have not set one up yet, ***press ENTER to indicate “none”***.
 
-The next prompt asks you whether you’d like to set up a database root password. This will be used later in the [PHP section](https://github.com/peyton-brown/Squid_Proxy-MariaDB-PHP-Configuration#phpapache2-install-steps). ***Type Y and then press ENTER. REMEMBER YOUR PASSWORD***.
+The next prompt asks you whether you’d like to set up a database root password. This will be used later in the [PHP section](https://github.com/peyton-brown/Squid-Proxy-MariaDB-PHP-Signup#phpapache2-install-steps). ***Type Y and then press ENTER. REMEMBER YOUR PASSWORD***.
 
 From there, you can ***press Y and then ENTER to accept the defaults for all the subsequent questions***. This will remove some anonymous users and the test database, disable remote root logins, and load these new rules so that MariaDB immediately implements the changes you have made.  
 
 First run MariaDB as root.
 - mariadb -u root -p -h localhost      
 
-Run the query code [(located in make-db.sql file)](https://github.com/peyton-brown/Squid_Proxy-MariaDB-PHP-Configuration/blob/main/MariaDB/make-db.sql).
+Run the query code [(located in make-db.sql file)](https://github.com/peyton-brown/Squid-Proxy-MariaDB-PHP-Signup/blob/main/MariaDB/make-db.sql).
 
 ---
 
