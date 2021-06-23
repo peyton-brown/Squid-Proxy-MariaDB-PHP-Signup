@@ -12,10 +12,10 @@
         }
 
         //TO INSERT username and password from field to jossyusers database
-        $query = "INSERT INTO passwd(username,password) VALUES('$username','$password')";
-        $result = mysqli_query($connection, $query);
+        $query = "INSERT INTO passwd(user,password) VALUES('$username','$password')";
+        $result = mysqli_query($conn, $query);
         if(!$result){
-            die("Query failed".mysqli_error($connection));
+            die("Query failed".mysqli_error($conn));
         }
     }
 
