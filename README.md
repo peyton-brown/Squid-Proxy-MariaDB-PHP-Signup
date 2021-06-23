@@ -10,7 +10,7 @@
 
 ### Update & Install Dependencies
 - apt-get update && apt-get upgrade -y         
-- apt-get install openssh-server dpkg-dev libncurses5-dev libldap2-dev libpam0g-dev libdb-dev cdbs libsasl2-dev debhelper libcppunit-dev libkrb5-dev comerr-dev libcap2-dev libecap3-dev libexpat1-dev libxml2-dev autotools-dev libltdl-dev pkg-config libnetfilter-conntrack-dev nettle-dev libgnutls28-dev apt-utils bison build-essential cmake binutils autoconf automake grep wget net-tools g++ git vim gawk perl software-properties-common devscripts equivs bison flex firewalld -y        
+- apt-get install openssh-server autoconf automake apt-utils grep wget net-tools g++ git vim gawk perl dpkg-dev libncurses5-dev libldap2-dev libpam0g-dev libdb-dev cdbs libsasl2-dev debhelper libcppunit-dev libkrb5-dev comerr-dev libcap2-dev libecap3-dev libexpat1-dev libxml2-dev autotools-dev libltdl-dev pkg-config libnetfilter-conntrack-dev nettle-dev libgnutls28-dev bison build-essential cmake binutils software-properties-common devscripts equivs bison flex -y        
 
 ---
 
@@ -20,17 +20,13 @@
 ### Git Clone Folder:
 - mkdir /git; cd /git/       
 - git clone https://github.com/peyton-brown/Squid_Proxy-MariaDB-PHP-Configuration.git; cd Squid_Proxy-MariaDB-PHP-Configuration             
-- cp /git/Squid_Proxy-MariaDB-PHP-Configuration/squid.conf /etc/squid/          
-- cp /git/Squid_Proxy-MariaDB-PHP-Configuration/Whitelist/allowed_sites.txt /etc/squid/      
+- cp /git/Squid_Proxy-MariaDB-PHP-Configuration/squid.conf /etc/squid/; cp /git/Squid_Proxy-MariaDB-PHP-Configuration/Whitelist/allowed_sites.txt /etc/squid/      
 
 ### Change the Whitelist to your needs.
 - vim /etc/squid/allowed_sites.txt         
 
-### Edit the "http_port to your ip in squid.conf (/etc/squid/squid.conf):        
-- http_port ipv4:3128       
-
 ### Open the 3128 port in the firewall:
-- ufw allow in "Squid"; firewall-cmd --permanent --add-port=3128/tcp; firewall-cmd --reload         
+- ufw allow in "Squid"    
 
 ### Starting Squid:  
 - systemctl stop squid        
@@ -38,11 +34,8 @@
 Create swap directories using -z.     
 - squid -z          
 
-Start the squid service:         
-- systemctl start squid     
-
-Enable the squid service to start automatically when the system boots:       
-- systemctl enable squid        
+Start the squid service & Enable the squid service to start automatically when the system boots:        
+- systemctl start squid; systemctl enable squid        
 
 Check if squid is running:       
 - systemctl status squid       
@@ -71,11 +64,11 @@ Run the query code [(located in make-db.sql file)](https://github.com/peyton-bro
 - apt-get install apache2 php php-cgi libapache2-mod-php php-common php-pear php-mbstring php-mysql -y; ufw allow 'Apache Full'; ufw enable; ufw status       
 
 ### Verify Apache Installation
-To verify Apache was installed correctly, open a web browser and type in the address bar:       
+To verify Apache was installed correctly, open a web browser and type your ip into the address bar:       
 - http://192.168.0.0            
 
 Replace 192.168.0.0 with the IP address of your server. If you are unsure what your IP address is, run the following command:       
-- hostname -I | awk '{print $1}'     
+- hostname -I     
 
 #### Copy Website to Apache folder:
 - cp -r /git/Squid_Proxy-MariaDB-PHP-Configuration/PHP-Signup-Website/* /var/www/html; rm -rf /var/www/html/index.html; systemctl restart apache2            
