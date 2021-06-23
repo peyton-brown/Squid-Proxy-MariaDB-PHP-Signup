@@ -31,13 +31,13 @@
 ### Starting Squid:  
 - systemctl stop squid        
 
-Create swap directories using -z.     
+### Create swap directories using -z, you will have to Ctrl+Z once you see "Removing PID file".     
 - squid -z          
 
-Start the squid service & Enable the squid service to start automatically when the system boots:        
+### Start the squid service & Enable the squid service to start automatically when the system boots:        
 - systemctl start squid; systemctl enable squid        
 
-Check if squid is running:       
+### Check if squid is running:       
 - systemctl status squid       
 
 [Squid Wiki](https://wiki.squid-cache.org/SquidFaq/InstallingSquid) || [Red Hat Documentation](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/networking_guide/configuring-the-squid-caching-proxy-server) || [Useful Blog Site](http://jitenjha.blogspot.com/2014/01/configure-squid-proxy-server.html)
