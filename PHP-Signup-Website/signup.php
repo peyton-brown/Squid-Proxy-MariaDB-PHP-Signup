@@ -10,6 +10,7 @@
     <form action="inc/signup-include.php" method="POST" class="signupInput">
       <input type="text" name="uid" placeholder="Username">
       <input type="password" name="pwd" placeholder="Password">
+      <br />
       <div class="signUpBottonContainer">
         <div class="center">
           <button type="submit" name="submit">Sign Up</button>

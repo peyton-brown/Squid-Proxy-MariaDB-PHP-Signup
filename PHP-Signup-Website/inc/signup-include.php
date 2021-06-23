@@ -1,13 +1,13 @@
 <?php
 
-include_once 'dbconnection.php';
+    include_once 'dbconnection.php';
 
-$uid = $_POST['uid'];
-$pwd = $_POST['pwd'];
+    $uid = $_POST['uid'];
+    $pwd = $_POST['pwd'];
 
-$sql = "INSERT INTO passwd (user, password) VALUES ('$uid', '$pwd');"; 
-$result = mysqli_query($conn, $sql);
+    $sql = "INSERT INTO passwd (user, password) VALUES ('$uid', '$pwd');";
+    mysqli_query($conn, $sql);
 
-header('location: ../index.php?signup=success');
+    header('location: ../index.php?signup=success');
 
 ?>
