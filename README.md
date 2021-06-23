@@ -1,5 +1,5 @@
 # Squid Proxy + Maria Database + PHP Signup Website
-#### Ubuntu Server 20.04.2
+#### Ubuntu Server 20.04
 ---
 
 ## Requirements:
