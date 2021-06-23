@@ -71,7 +71,7 @@ Replace 192.168.0.0 with the IP address of your server. If you are unsure what y
 - hostname -I     
 
 #### Copy Website to Apache folder:
-- cp -r /git/Squid_Proxy-MariaDB-PHP-Configuration/PHP-Signup-Website/* /var/www/html; rm -rf /var/www/html/index.html; systemctl restart apache2            
+- cp -r /git/Squid-Proxy-MariaDB-PHP-Signup/PHP-Signup-Website/* /var/www/html; rm -rf /var/www/html/index.html; systemctl restart apache2            
 
 ### NOTE: This method only works on a local network unless you port forward. If you want to setup multiple websites on the same server use the Linuxize source or [click here](https://linuxize.com/post/how-to-install-apache-on-ubuntu-20-04/#setting-up-a-virtual-host).
 
