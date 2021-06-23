@@ -2,11 +2,22 @@
 
     include_once 'dbconnection.php';
 
-    $uid = $_POST['uid'];
-    $pwd = $_POST['pwd'];
+    if(isset($_POST['submit'])){
+        $username = $_POST['uid'];
+        $password = $_POST['pwd'];
 
-    $sql = "INSERT INTO passwd (`user`, `password`) VALUES (`$uid`, `$pwd`);";
-    mysqli_query($conn, $sql);
+        //TO ALERT SUBMISSION OF BLANK FIELDS(IT DOESN'T PREVENT SUBMISSION OF BLANK FIELD THOUGH)
+        if (!$username && !$password){
+            echo "can't submit blank fields";
+        }
+
+        //TO INSERT username and password from field to jossyusers database
+        $query = "INSERT INTO passwd(username,password) VALUES('$username','$password')";
+        $result = mysqli_query($connection, $query);
+        if(!$result){
+            die("Query failed".mysqli_error($connection));
+        }
+    }
 
     header('location: ../index.php?signup=success');
 
