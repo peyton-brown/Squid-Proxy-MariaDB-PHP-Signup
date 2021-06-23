@@ -8,7 +8,7 @@
 
         //TO ALERT SUBMISSION OF BLANK FIELDS(IT DOESN'T PREVENT SUBMISSION OF BLANK FIELD THOUGH)
         if (!$username && !$password){
-            echo "can't submit blank fields";
+            echo "Enter a username or password.";
         }
 
         //TO INSERT username and password from field to jossyusers database
