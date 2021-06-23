@@ -31,7 +31,7 @@
 ### Starting Squid:  
 - systemctl stop squid        
 
-### Create swap directories using -z, you will have to Ctrl+Z once you see "Removing PID file".     
+### Create swap directories using -z, you will have to Ctrl+C once you see "Removing PID file".     
 - squid -z          
 
 ### Start the squid service & Enable the squid service to start automatically when the system boots:        
