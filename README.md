@@ -66,7 +66,7 @@
 #### Copy Website to Apache folder:
 - cp -r /git/Squid-Proxy-MariaDB-PHP-Signup/PHP-Signup-Website/* /var/www/html; rm -rf /var/www/html/index.html; systemctl restart apache2            
 
-#### To verify Apache was installed correctly and the website has been copied over, open a web browser and type your ip into the address bar. Replace 192.168.0.0 with the IP address of your server. If you are unsure what your IP address is, run the following command:       
+#### To verify Apache was installed correctly and the website has been copied over, open a web browser and type your ip into the address bar. Replace 192.168.1.254 with the IP address of your server. If you are unsure what your IP address is, run the following command:       
 - hostname -I           
 
 ![Where to put IP in Google Chrome](https://i.imgur.com/zVzTrVH.png)
