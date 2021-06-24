@@ -64,7 +64,7 @@
 - apt-get install apache2 php php-cgi libapache2-mod-php php-common php-pear php-mbstring php-mysql -y; ufw allow 'Apache Full'; ufw enable; ufw status       
 
 #### Verify Apache Installation
-To verify Apache was installed correctly, open a web browser and type your ip into the address bar:       
+##### To verify Apache was installed correctly, open a web browser and type your ip into the address bar:       
 - http://192.168.0.0            
 
 ##### Replace 192.168.0.0 with the IP address of your server. If you are unsure what your IP address is, run the following command:       
