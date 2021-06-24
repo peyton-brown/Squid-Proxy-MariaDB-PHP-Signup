@@ -47,14 +47,14 @@
 ## MariaDB Install Steps:     
 - apt-get install mariadb-server mariadb-client -y; service mysql restart; mysql_secure_installation      
 
-The first prompt will ask you to enter the current database root password. Since you have not set one up yet, ***press ENTER to indicate “none”***.
+#### The first prompt will ask you to enter the current database root password. Since you have not set one up yet, ***press ENTER to indicate “none”***.
 
-The next prompt asks you whether you’d like to set up a database root password. This is not important for Squid but if you have a use for this you can type Y, if not ***Type N and then press ENTER.***.
+#### The next prompt asks you whether you’d like to set up a database root password. This is not important for Squid but if you have a use for this you can type Y, if not ***Type N and then press ENTER.***.
 
-From there, you can ***press Y and then ENTER to accept the defaults for all the subsequent questions***. This will remove some anonymous users and the test database, disable remote root logins, and load these new rules so that MariaDB immediately implements the changes you have made.  
+#### From there, you can ***press Y and then ENTER to accept the defaults for all the subsequent questions***. This will remove some anonymous users and the test database, disable remote root logins, and load these new rules so that MariaDB immediately implements the changes you have made.  
 
-First run MariaDB as root.
-- mariadb -u root -p -h localhost      
+#### First run MariaDB as root.
+- mariadb -u root -h localhost      
 
 ### Query Code is in the [MariaDB folder.](https://github.com/peyton-brown/Squid-Proxy-MariaDB-PHP-Signup/blob/main/MariaDB/make-db.sql)
 
@@ -63,11 +63,11 @@ First run MariaDB as root.
 ## PHP/Apache2 Install Steps:
 - apt-get install apache2 php php-cgi libapache2-mod-php php-common php-pear php-mbstring php-mysql -y; ufw allow 'Apache Full'; ufw enable; ufw status       
 
-### Verify Apache Installation
+#### Verify Apache Installation
 To verify Apache was installed correctly, open a web browser and type your ip into the address bar:       
 - http://192.168.0.0            
 
-Replace 192.168.0.0 with the IP address of your server. If you are unsure what your IP address is, run the following command:       
+##### Replace 192.168.0.0 with the IP address of your server. If you are unsure what your IP address is, run the following command:       
 - hostname -I     
 
 #### Copy Website to Apache folder:
