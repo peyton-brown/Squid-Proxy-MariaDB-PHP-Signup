@@ -1,5 +1,5 @@
 # Squid Proxy + Maria Database + PHP Signup Website
-#### Ubuntu Server 20.04
+#### Recommended: VM with Ubuntu Server 20.04
 ---
 
 ## Requirements:
