@@ -34,10 +34,10 @@
 ### Create swap directories using -z, you will have to Ctrl+C once you see "Removing PID file".     
 - squid -z          
 
-### Start the squid service & Enable the squid service to start automatically when the system boots:        
+### Start the Squid service & Enable the service to start automatically when the system boots:        
 - systemctl start squid; systemctl enable squid        
 
-### Check if squid is running:       
+### Check if Squid is running:       
 - systemctl status squid       
 
 [Squid Wiki](https://wiki.squid-cache.org/SquidFaq/InstallingSquid) || [Red Hat Documentation](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/networking_guide/configuring-the-squid-caching-proxy-server) || [Useful Blog Site](http://jitenjha.blogspot.com/2014/01/configure-squid-proxy-server.html)
@@ -47,7 +47,7 @@
 ## MariaDB Install Steps:     
 - apt-get install mariadb-server mariadb-client -y; service mysql restart; mysql_secure_installation      
 
-#### The first prompt will ask you to enter the current database root password. Since you have not set one up yet, ***press ENTER to indicate “none”***.
+#### The first prompt will ask you to enter the current database root password. Since there is not one setup, ***press ENTER to indicate “none”***.
 
 #### The next prompt asks you whether you’d like to set up a database root password. This is not important for Squid but if you have a use for this you can type Y, if not ***Type N and then press ENTER.***.
 
@@ -63,17 +63,15 @@
 ## PHP/Apache2 Install Steps:
 - apt-get install apache2 php php-cgi libapache2-mod-php php-common php-pear php-mbstring php-mysql -y; ufw allow 'Apache Full'; ufw enable; ufw status       
 
-#### Verify Apache Installation
-##### To verify Apache was installed correctly, open a web browser and type your ip into the address bar:       
-- http://192.168.0.0            
-
-##### Replace 192.168.0.0 with the IP address of your server. If you are unsure what your IP address is, run the following command:       
-- hostname -I     
-
 #### Copy Website to Apache folder:
 - cp -r /git/Squid-Proxy-MariaDB-PHP-Signup/PHP-Signup-Website/* /var/www/html; rm -rf /var/www/html/index.html; systemctl restart apache2            
 
-### NOTE: This method only works on a local network unless you port forward. If you want to setup multiple websites on the same server use the Linuxize source or [click here](https://linuxize.com/post/how-to-install-apache-on-ubuntu-20-04/#setting-up-a-virtual-host).
+#### To verify Apache was installed correctly and the website has been copied over, open a web browser and type your ip into the address bar. Replace 192.168.0.0 with the IP address of your server. If you are unsure what your IP address is, run the following command:       
+- hostname -I           
+
+![Where to put IP in Google Chrome](https://i.imgur.com/zVzTrVH.png)
+
+### NOTE: This method only works on a local network unless you port forward. If you want to setup multiple websites on the same server use [Virtual Hosts](https://linuxize.com/post/how-to-install-apache-on-ubuntu-20-04/#setting-up-a-virtual-host).
 
 [Phoenixnap Apache Installation Steps](https://phoenixnap.com/kb/how-to-install-apache-web-server-on-ubuntu-18-04) || [Linuxize](https://linuxize.com/post/how-to-install-apache-on-ubuntu-20-04/)
 
