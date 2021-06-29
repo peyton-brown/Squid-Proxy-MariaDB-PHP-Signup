@@ -20,10 +20,11 @@
 ### Git Clone Folder:
 - mkdir /git; cd /git/       
 - git clone https://github.com/peyton-brown/Squid-Proxy-MariaDB-PHP-Signup.git; cd /             
-- cp /git/Squid-Proxy-MariaDB-PHP-Signup/squid.conf /etc/squid/; cp /git/Squid-Proxy-MariaDB-PHP-Signup/Whitelist/allowed_sites.txt /etc/squid/      
+- cp /git/Squid-Proxy-MariaDB-PHP-Signup/squid.conf /etc/squid/; cp /git/Squid-Proxy-MariaDB-PHP-Signup/Whitelist-Blacklist/allowed-sites.txt /etc/squid/; cp /git/Squid-Proxy-MariaDB-PHP-Signup/Whitelist-Blacklist/blocked-sites.txt /etc/squid/      
 
-### Change the Whitelist to your needs.
-- vim /etc/squid/allowed_sites.txt         
+### Change the Whitelist/Blacklist to your needs.
+- vim /etc/squid/allowed-sites.txt         
+- vim /etc/squid/blocked-sites.txt
 
 ### Open the 3128 port in the firewall:
 - ufw allow in "Squid"    
@@ -39,6 +40,8 @@
 
 ### Check if Squid is running:       
 - systemctl status squid       
+
+![Picture verifying Squid is running](https://i.imgur.com/zVzTrVH.png)
 
 [Squid Wiki](https://wiki.squid-cache.org/SquidFaq/InstallingSquid) || [Red Hat Documentation](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/networking_guide/configuring-the-squid-caching-proxy-server) || [Useful Blog Site](http://jitenjha.blogspot.com/2014/01/configure-squid-proxy-server.html)
 
