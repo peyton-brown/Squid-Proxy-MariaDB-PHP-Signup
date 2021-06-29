@@ -1,0 +1,3 @@
+.plex.tv
+.github.com
+.paypal.com
