@@ -56,7 +56,7 @@
 
 #### From there, you can ***press Y and then ENTER to accept the defaults for all the subsequent questions***. This will remove some anonymous users and the test database, disable remote root logins, and load these new rules so that MariaDB immediately implements the changes you have made.  
 
-#### First run MariaDB as root.
+#### Run MariaDB as root.
 - mariadb -u root -h localhost      
 
 ### Query Code is in the [MariaDB folder.](https://github.com/peyton-brown/Squid-Proxy-MariaDB-PHP-Signup/blob/main/MariaDB/make-db.sql)
@@ -74,7 +74,7 @@
 
 ![Where to put IP in Google Chrome](https://i.imgur.com/zVzTrVH.png)
 
-### NOTE: This method only works on a local network unless you port forward. If you want to setup multiple websites on the same server use [Virtual Hosts](https://linuxize.com/post/how-to-install-apache-on-ubuntu-20-04/#setting-up-a-virtual-host).
+### NOTE: This method only works on a local network unless you port forward. If you want to setup multiple websites on the same server use [Virtual Hosts](https://linuxize.com/post/how-to-install-apache-on-ubuntu-20-04/#setting-up-a-virtual-host) and a domain.
 
 [Phoenixnap Apache Installation Steps](https://phoenixnap.com/kb/how-to-install-apache-web-server-on-ubuntu-18-04) || [Linuxize](https://linuxize.com/post/how-to-install-apache-on-ubuntu-20-04/)
 
