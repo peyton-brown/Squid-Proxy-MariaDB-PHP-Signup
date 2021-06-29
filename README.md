@@ -20,7 +20,11 @@
 ### Git Clone Folder:
 - mkdir /git; cd /git/       
 - git clone https://github.com/peyton-brown/Squid-Proxy-MariaDB-PHP-Signup.git; cd /             
-- cp /git/Squid-Proxy-MariaDB-PHP-Signup/squid.conf /etc/squid/; cp /git/Squid-Proxy-MariaDB-PHP-Signup/Whitelist-Blacklist/allowed-sites.txt /etc/squid/; cp /git/Squid-Proxy-MariaDB-PHP-Signup/Whitelist-Blacklist/blocked-sites.txt /etc/squid/      
+- cp /git/Squid-Proxy-MariaDB-PHP-Signup/squid.conf /etc/squid/; cp /git/Squid-Proxy-MariaDB-PHP-Signup/Whitelist-Blacklist/allowed-sites.txt /etc/squid/; cp /git/Squid-Proxy-MariaDB-PHP-Signup/Whitelist-Blacklist/blocked-sites.txt /etc/squid/  
+
+### In squid.conf (/etc/squid/squid.conf), comment or uncomment depending on your needs. If you use a whitelist, the blacklist is not necessary and vice versa, though you can still use both if needed.
+
+![Picture showing what to comment and uncomment from squid.conf](https://i.imgur.com/6N0DPFA.png)
 
 ### Change the Whitelist/Blacklist to your needs.
 - vim /etc/squid/allowed-sites.txt         
