@@ -41,7 +41,7 @@
 ### Check if Squid is running:       
 - systemctl status squid       
 
-![Picture verifying Squid is running](https://i.imgur.com/zVzTrVH.png)
+![Picture verifying Squid is running](https://i.imgur.com/UkN5Dtd.png)
 
 [Squid Wiki](https://wiki.squid-cache.org/SquidFaq/InstallingSquid) || [Red Hat Documentation](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/networking_guide/configuring-the-squid-caching-proxy-server) || [Useful Blog Site](http://jitenjha.blogspot.com/2014/01/configure-squid-proxy-server.html)
 
